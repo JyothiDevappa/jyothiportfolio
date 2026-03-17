@@ -1,0 +1,241 @@
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+
+    /* Prevent horizontal scroll */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* 1. Navigation & Hamburger */
+    nav {
+        height: 80px;
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        /* background: rgba(138, 123, 123, 0.95); */
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        margin: 15px 0;
+    }
+
+    .nav-links span {
+        display: none;
+        /* Hide the "|" separators on mobile */
+    }
+
+    /* 2. Hero Container Layout */
+    .hero-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 100px 20px 40px 20px;
+        text-align: center;
+    }
+
+    /* Video fitment */
+    #bg-video {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .tech-cloud {
+        width: 100%;
+        height: 250px;
+        /* Increased height to prevent icons from touching */
+        order: 1;
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .floating-icon {
+        width: 40px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    /* Positioning: Staying between 5% and 55% left */
+    .i1 {
+        top: 7%;
+        left: 5%;
+    }
+
+    .i2 {
+        top: 15%;
+        left: 30%;
+    }
+
+    /* Near middle */
+    .i3 {
+        top: 32%;
+        left: 15%;
+    }
+
+    .i4 {
+        top: 45%;
+        left: 30%;
+    }
+
+    /* Near middle */
+    .i5 {
+        top: 62%;
+        left: 10%;
+    }
+
+    .i6 {
+        top: 78%;
+        left: 30%;
+    }
+
+    /* Near middle */
+    .i7 {
+        top: 92%;
+        left: 15%;
+    }
+
+
+
+.content-box {
+    width: 100%;
+    order: 2;
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+
+
+.hero-title {
+    font-size: 1.9rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    /* Space before resume button */
+}
+
+.resume-btn {
+    margin-top: 10px;
+    padding: 10px 40px;
+}
+
+
+
+
+
+/* 5. Socials (Bottom Center) */
+.socials {
+    order: 3;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+    padding-top: 50px;
+    gap: 40px;
+}
+}
+
+
+
+
+
+
+
+/* --- Mobile Responsive (Keeping exact UI layout) --- */
+@media screen and (max-width: 768px) {
+
+    .about-video-section {
+        height: 40vh; /* Slightly taller to ensure content fits */
+        padding: 0 10px;
+    }
+
+    .about-wrapper {
+        gap: 0; /* Maintains your centering logic */
+        flex-direction: row; /* Forces it to stay horizontal */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-title {
+        font-size: 20px !important; /* Significantly smaller to prevent wrapping */
+        min-width: fit-content;
+    }
+
+    .divider {
+        margin: 0 15px; /* Reduced spacing between elements */
+        width: 2px; /* Thinner line for mobile */
+    }
+
+    /* Adjusting the JS trigger for the line height on mobile */
+    .show-line {
+        height: 250px !important; /* Shorter vertical line */
+    }
+
+    .about-right {
+        max-width: 180px; /* Constrains text width to fit next to title */
+    }
+
+    .about-right p {
+
+        font-family: 'Courier New', Courier, monospace;
+
+        font-size: 15px; /* Smaller body text */
+        line-height: 1.4;
+    }
+
+    .about-btn {
+        margin-top: 15px;
+        padding: 6px 15px;
+        font-size: 11px;
+        border-width: 1px;
+    }
+}
+
+/* Extra small screens (Phones under 400px wide) */
+@media screen and (max-width: 400px) {
+    .about-title {
+        font-size: 14px;
+    }
+    .about-right {
+        max-width: 140px;
+    }
+    .divider {
+        margin: 0 10px;
+    }
+}
+
+
+
+
+
+
+
+
+

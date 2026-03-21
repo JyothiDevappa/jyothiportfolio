@@ -21,37 +21,39 @@
         z-index: 100;
     }
 
-   .nav-links {
-    background-image: url("tai-bui-sL1LebbKvf8-unsplash.jpg");
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    backdrop-filter: blur(3px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s ease-in-out;
-    z-index: 99;
+    .nav-links {
+        background-image: url("tai-bui-sL1LebbKvf8-unsplash.jpg");
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        backdrop-filter: blur(3px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        z-index: 99;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
-    overflow: hidden; /* needed for overlay */
-}
+        overflow: hidden;
+        /* needed for overlay */
+    }
 
-/* 🔥 overlay for blur + dark effect */
-.nav-links::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* controls visibility */
-    backdrop-filter: blur(2px);
-    z-index: -1;
-}
+    /* 🔥 overlay for blur + dark effect */
+    .nav-links::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        /* controls visibility */
+        backdrop-filter: blur(2px);
+        z-index: -1;
+    }
 
     .nav-links.active {
         right: 0;
@@ -67,121 +69,86 @@
         /* Hide the "|" separators on mobile */
     }
 
-    /* 2. Hero Container Layout */
-    .hero-container {
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 100px 20px 40px 20px;
-        text-align: center;
-    }
-
-    /* Video fitment */
-    #bg-video {
-        width: 100%;
-        height: 100%;
-    }
-
-
-    .tech-cloud {
-        width: 100%;
-        height: 250px;
-        /* Increased height to prevent icons from touching */
-        order: 1;
-        margin-bottom: 30px;
-        position: relative;
-    }
-
-    .floating-icon {
-        width: 40px;
-        height: 45px;
-        font-size: 1rem;
-    }
-
-    /* Positioning: Staying between 5% and 55% left */
-    .i1 {
-        top: 7%;
-        left: 5%;
-    }
-
-    .i2 {
-        top: 15%;
-        left: 30%;
-    }
-
-    /* Near middle */
-    .i3 {
-        top: 32%;
-        left: 15%;
-    }
-
-    .i4 {
-        top: 45%;
-        left: 30%;
-    }
-
-    /* Near middle */
-    .i5 {
-        top: 62%;
-        left: 10%;
-    }
-
-    .i6 {
-        top: 78%;
-        left: 30%;
-    }
-
-    /* Near middle */
-    .i7 {
-        top: 92%;
-        left: 15%;
-    }
-
-
-
-    .content-box {
-        width: 100%;
-        order: 2;
-        text-align: center;
-
-        margin-top: 50px;
-    }
-
-
-
-    .hero-title {
-        font-size: 1.9rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-        margin-bottom: 40px;
-        /* Space before resume button */
-    }
-
-    .resume-btn {
-        margin-top: 10px;
-        padding: 10px 40px;
-    }
-
-
-
-
-
-    /* 5. Socials (Bottom Center) */
-    .socials {
-        order: 3;
-        position: relative;
-        bottom: 0;
-        margin-top: auto;
-        padding-top: 50px;
-        gap: 40px;
-    }
 }
 
 
 
 
 
+.overlay {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .hero-container {
+    height: 95vh; /* 👈 instead of 100vh */
+}
+
+    .hero-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 160px 20px 40px 20px;
+        text-align: left;
+    }
+
+    .content-box {
+        width: 100%;
+        order: 2;
+        text-align: left;
+        margin-top: 90px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        text-align: left;
+
+    }
+
+   .name {
+    display: block; /* 👈 pushes to next line */
+    font-size: 1.4rem;
+    text-align: left;
+    margin-top: 5px; /* small gap */
+}
+    .subtitle {
+
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .typing {
+        font-size: 1rem;
+            text-align: left;
+    }
+
+    .resume-btn {
+        border-radius: 4px;
+        margin-top: 10px;
+        padding: 10px 40px;
+    }
+
+    .socials {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 40px;
+    }
+
+    .overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+}
 
 
 /* --- Mobile Responsive (Keeping exact UI layout) --- */
@@ -189,49 +156,38 @@
 
     .about-video-section {
         height: 40vh;
-        /* Slightly taller to ensure content fits */
         padding: 0 10px;
     }
 
     .about-wrapper {
         gap: 0;
-        /* Maintains your centering logic */
         flex-direction: row;
-        /* Forces it to stay horizontal */
         justify-content: center;
         width: 100%;
     }
 
     .about-title {
         font-size: 20px !important;
-        /* Significantly smaller to prevent wrapping */
         min-width: fit-content;
     }
 
     .divider {
         margin: 0 15px;
-        /* Reduced spacing between elements */
         width: 2px;
-        /* Thinner line for mobile */
     }
 
-    /* Adjusting the JS trigger for the line height on mobile */
     .show-line {
         height: 250px !important;
-        /* Shorter vertical line */
     }
 
     .about-right {
         max-width: 180px;
-        /* Constrains text width to fit next to title */
     }
 
     .about-right p {
 
-        font-family: 'Courier New', Courier, monospace;
 
         font-size: 15px;
-        /* Smaller body text */
         line-height: 1.4;
     }
 

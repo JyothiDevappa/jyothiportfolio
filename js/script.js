@@ -29,7 +29,8 @@
     strings:[
         "modern websites",
         "full-stack applications",
-        "interactive web experiences"
+        "responsive designs",
+        "UI/UX designs",
     ],
     typeSpeed:60,
     backSpeed:40,
@@ -45,42 +46,30 @@
 
 
 
-const section = document.querySelector("#aboutSection");
-const title = document.querySelector(".about-title");
-const line = document.querySelector(".divider");
-const wrapper = document.querySelector(".about-wrapper");
-const text = document.querySelector(".about-right");
+window.addEventListener("load", () => {
 
-const observer = new IntersectionObserver(entries => {
+    const title = document.querySelector(".about-title");
+    const line = document.querySelector(".divider");
+    const wrapper = document.querySelector(".about-wrapper");
+    const text = document.querySelector(".about-right");
 
-    entries.forEach(entry => {
+    setTimeout(() => {
+        title.classList.add("show-title");
+    }, 300);
 
-        if(entry.isIntersecting){
+    setTimeout(() => {
+        line.classList.add("show-line");
+    }, 800);
 
-            setTimeout(()=>{
-                title.classList.add("show-title");
-            },300);
+    setTimeout(() => {
+        wrapper.classList.add("move-left");
+    }, 1200);
 
-            setTimeout(()=>{
-                line.classList.add("show-line");
-            },900);
-
-            setTimeout(()=>{
-                wrapper.classList.add("move-left");
-            },1600);
-
-            setTimeout(()=>{
-                text.classList.add("show-text");
-            },2200);
-
-        }
-
-    });
+    setTimeout(() => {
+        text.classList.add("show-text");
+    }, 1600);
 
 });
-
-observer.observe(section);
-
 
 
 

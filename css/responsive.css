@@ -82,8 +82,9 @@
 @media (max-width: 768px) {
 
     .hero-container {
-    height: 95vh; /* 👈 instead of 100vh */
-}
+        height: 95vh;
+        /* 👈 instead of 100vh */
+    }
 
     .hero-container {
         flex-direction: column;
@@ -106,12 +107,15 @@
 
     }
 
-   .name {
-    display: block; /* 👈 pushes to next line */
-    font-size: 1.4rem;
-    text-align: left;
-    margin-top: 5px; /* small gap */
-}
+    .name {
+        display: block;
+        /* 👈 pushes to next line */
+        font-size: 1.4rem;
+        text-align: left;
+        margin-top: 5px;
+        /* small gap */
+    }
+
     .subtitle {
 
         font-size: 1.5rem;
@@ -121,13 +125,15 @@
 
     .typing {
         font-size: 1rem;
-            text-align: left;
+        text-align: left;
     }
 
     .resume-btn {
         border-radius: 4px;
-        margin-top: 10px;
+        margin-top: 90px;
         padding: 10px 40px;
+        border-width: 1px !important;
+
     }
 
     .socials {
@@ -151,65 +157,182 @@
 }
 
 
-/* --- Mobile Responsive (Keeping exact UI layout) --- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Mobile Responsive (Cleaned, no layout break) --- */
 @media screen and (max-width: 768px) {
 
     .about-video-section {
-        height: 40vh;
+        height: 70vh;
         padding: 0 10px;
     }
 
     .about-wrapper {
-        gap: 0;
+        gap: 10px;
         flex-direction: row;
         justify-content: center;
         width: 100%;
     }
 
     .about-title {
-        font-size: 20px !important;
+        font-size: 18px !important;
         min-width: fit-content;
+        text-align: center;
+
     }
 
     .divider {
-        margin: 0 15px;
+        margin: 0 12px;
         width: 2px;
     }
 
     .show-line {
-        height: 250px !important;
+        height: 220px;
     }
 
     .about-right {
-        max-width: 180px;
+        max-width: 220px;
     }
 
     .about-right p {
+        font-size: 13px;
+        line-height: 1.6;
 
-
-        font-size: 15px;
-        line-height: 1.4;
     }
 
     .about-btn {
-        margin-top: 15px;
-        padding: 6px 15px;
+        margin-top: 12px;
+        padding: 6px 14px;
         font-size: 11px;
         border-width: 1px;
     }
 }
 
-/* Extra small screens (Phones under 400px wide) */
+
+/* --- Extra small screens --- */
 @media screen and (max-width: 400px) {
+
     .about-title {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .about-right {
-        max-width: 140px;
+        max-width: 160px;
     }
 
     .divider {
-        margin: 0 10px;
+        margin: 0 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 1200px) {
+    .portfolio-page-wrapper .video-box {
+        width: 850px;
+        height: 480px;
+    }
+
+    .portfolio-page-wrapper .project-title-outside {
+        width: 850px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-page-wrapper .heading-area h1 {
+        font-size: 1.6rem;
+    }
+
+    .portfolio-page-wrapper .main-layout {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .portfolio-page-wrapper .project-title-outside {
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+        text-align: left !important;
+        font-size: 1rem;
+    }
+
+    .portfolio-page-wrapper .content-row {
+        flex-direction: column !important;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .portfolio-page-wrapper .brand-vertical {
+        display: none;
+    }
+
+    .portfolio-page-wrapper .video-box {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .portfolio-page-wrapper .side-content {
+        width: 100%;
+        margin: 20px 0 0 0 !important;
+        height: auto;
+    }
+
+    .portfolio-page-wrapper .description-box {
+        margin-top: 0;
+        padding: 20px;
+        font-size: 0.85rem;
+    }
+
+    .portfolio-page-wrapper .links-group {
+        margin: 20px 0 0 0 !important;
+        flex-direction: row;
+        align-items: center !important;
+        gap: 30px;
+    }
+
+    .portfolio-page-wrapper .bottom-line {
+        width: 100%;
+        margin: 30px 0 0 0 !important;
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+    .portfolio-page-wrapper .heading-description {
+        max-width: 350px;
+        margin: 25px auto 0;
+        text-align: justify;
+        text-align-last: center;
     }
 }

@@ -109,3 +109,44 @@ document.querySelectorAll(".portfolio-page-wrapper .video-box").forEach(box => {
         });
 
 
+
+
+
+
+
+
+
+
+
+
+        const scrollText = document.getElementById("scrollText");
+
+const sections = [
+    {
+        id: ".hero-container",
+        text: "scroll."
+    },
+    {
+        id: "#aboutSection",
+        text: "read? go next."
+    },
+    {
+        id: ".portfolio-page-wrapper",
+        text: "still here? nice."
+    }
+];
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(sec => {
+        const element = document.querySelector(sec.id);
+        const rect = element.getBoundingClientRect();
+
+        if (rect.top <= window.innerHeight / 2) {
+            current = sec.text;
+        }
+    });
+
+    scrollText.textContent = current;
+});

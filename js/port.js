@@ -33,7 +33,8 @@ new Typed(".typing", {
     typeSpeed: 60,
     backSpeed: 40,
     backDelay: 1500,
-    loop: true
+    loop: true,
+    showCursor: false // <--- ADD THIS LINE TO REMOVE THE WHITE LINE
 });
 
 

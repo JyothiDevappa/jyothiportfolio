@@ -7,43 +7,6 @@
         overflow-x: hidden;
     }
 
-    /* 1. Navigation & Hamburger */
-    nav {
-        height: 80px;
-        padding: 0 20px;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 1.5rem;
-        color: #fff;
-        cursor: pointer;
-        z-index: 100;
-    }
-    /* 🔥 overlay for blur + dark effect */
-    .nav-links::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.3);
-        /* controls visibility */
-        backdrop-filter: blur(2px);
-        z-index: -1;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem;
-        margin: 15px 0;
-    }
-
-    .nav-links span {
-        display: none;
-        /* Hide the "|" separators on mobile */
-    }
 
 }
 
@@ -59,12 +22,13 @@
 
 /* ================= THE FINAL MOBILE HUD FIX ================= */
 @media screen and (max-width: 768px) {
-    
+
 
     /* 2. MAIN CONTENT ZONE: Center-Top */
     .content-box {
         position: absolute !important;
-        top: 22% !important; /* Locked in the Center-Top */
+        top: 22% !important;
+        /* Locked in the Center-Top */
         left: 50px !important;
         width: calc(100% - 80px) !important;
         display: flex !important;
@@ -78,52 +42,50 @@
     }
 
     .hero_name {
-        font-size: 2.4rem !important;
+        font-size: 2.2rem !important;
         line-height: 1 !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 25px !important;
     }
 
 
 
     /* 3. SUBTITLE ZONE: Pushed Downside */
-.subtitle-frame {
-    position: relative !important;
-    height: 80px !important; /* FIXED HEIGHT: Still stops the button jumping */
-    
-    /* Pushes the subtitle down away from "JYOTHIDEVAPPA" */
-    margin-top: 35px !important; 
-    
-    margin-bottom: 0 !important;
-    display: block !important;
-}
+    .subtitle-frame {
+        position: relative !important;
+        height: 80px !important;
+        margin-top: 35px !important;
 
-.subtitle {
-    font-size: 1.1rem !important;
-    display: block !important;
-    width: 100% !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-}
+        margin-bottom: 0 !important;
+        display: block !important;
+    }
 
-.typing {
-    display: block !important;
-    margin-top: 8px !important; /* Small extra gap between "I BUILD" and the typing words */
-    font-size: 1.1rem !important;
-    color: #00d9ff !important;
-}
-   
+    .subtitle {
+        font-size: 1.1rem !important;
+        display: block !important;
+        width: 100% !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
 
-.resume-btn {
-    position: absolute !important;
-    top: calc(22% + 360px) !important; 
-    left: 60px !important;
-    padding: 10px 25px !important;
-    font-size: 12px !important;
-    z-index: 10 !important;
-    
-    display: inline-flex !important;
-    align-items: center !important;
-}
+    .typing {
+        display: block !important;
+        margin-top: 8px !important;
+        /* Small extra gap between "I BUILD" and the typing words */
+        font-size: 2rem !important;
+        color: #00d9ff !important;
+    }
 
+
+    .resume-btn {
+        position: absolute !important;
+        top: calc(59% + 190px) !important;
+        left: 60px !important;
+        padding: 10px 25px !important;
+        font-size: 12px !important;
+        z-index: 10 !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+    }
 
 
 
@@ -132,44 +94,51 @@
 
 
 
-/* 5. SOCIAL LINKS: Left Side Rail (Upsized) */
-.tech-social-hub {
-    position: absolute !important;
-    left: 20px !important;
-    bottom: 50px !important; /* Pushed slightly up for visibility */
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 30px !important; /* Increased gap for larger icons */
-}
 
-.social-rail {
-    display: block !important;
-    height: 45px !important; /* Taller rail to match bigger icons */
-    top: -55px !important;
-    width: 2px !important; /* Slightly thicker line */
-    background: linear-gradient(to bottom, transparent, #00d9ff) !important;
-}
+    /* 5. SOCIAL LINKS: Left Side Rail (Upsized) */
+    .tech-social-hub {
+        position: absolute !important;
+        left: 20px !important;
+        bottom: 50px !important;
+        /* Pushed slightly up for visibility */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        /* Increased gap for larger icons */
+    }
 
-.social-item {
-    font-size: 1.5rem !important; /* Increased from 1.2rem */
-    gap: 15px !important;
-}
+    .social-rail {
+        display: block !important;
+        height: 45px !important;
+        /* Taller rail to match bigger icons */
+        top: -55px !important;
+        width: 2px !important;
+        /* Slightly thicker line */
+        background: linear-gradient(to bottom, transparent, #00d9ff) !important;
+    }
 
-.social-label {
-    display: inline-block !important;
-    font-size: 7px !important; /* Bigger, readable tech label */
-    letter-spacing: 4px !important;
-    opacity: 0.6 !important;
-    color: #00d9ff !important;
-}
+    .social-item {
+        font-size: 1.5rem !important;
+        /* Increased from 1.2rem */
+        gap: 15px !important;
+    }
 
-/* Base Decoration fix for bigger size */
-.social-base-line {
-    display: block !important;
-    width: 50px !important;
-    height: 2px !important;
-    margin-top: 5px !important;
-}
+    .social-label {
+        display: inline-block !important;
+        font-size: 7px !important;
+        /* Bigger, readable tech label */
+        letter-spacing: 4px !important;
+        opacity: 0.6 !important;
+        color: #00d9ff !important;
+    }
+
+    /* Base Decoration fix for bigger size */
+    .social-base-line {
+        display: block !important;
+        width: 50px !important;
+        height: 2px !important;
+        margin-top: 5px !important;
+    }
 
 }
 

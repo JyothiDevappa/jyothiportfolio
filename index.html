@@ -1,56 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
+    <!-- 1. Basic Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jyothi | Full Stack Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
 
+    <!-- 2. Title -->
+    <title>Jyothi | Full Stack Developer</title>
+
+    <!-- 3. Google Fonts (grouped together) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- 4. Icons (ONLY ONE Font Awesome, remove duplicate) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- 5. External Scripts -->
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <!-- 6. Your CSS (custom last so it overrides others) -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
-
 </head>
-
 <body>
     <div class="hero-container">
         <video autoplay muted loop playsinline id="bg-video">
             <source src="videos/hero-banner.mp4" type="video/mp4">
         </video>
-
-        <!-- 
-<nav>
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-
-    <div class="nav-links" id="nav-list">
-        <a href="#" class="active"><i class="fas fa-terminal"></i> HOME</a>
-        <a href="pages/projectss.html"><i class="fas fa-code-branch"></i> PROJECTS</a>
-        <a href="about.html"><i class="fas fa-microchip"></i> ABOUT</a>
-        
-        <div class="mobile-socials">
-            <div class="divider"><span>COMMS_LINK</span></div>
-            <div class="social-icons">
-                <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:jyothidevappas@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="logo">
-        <img src="images/logo-2.gif" alt="J Logo" class="logo-img">
-    </div>
-</nav> -->
 
 
 
@@ -63,7 +42,26 @@
 
             <div class="nav-links" id="nav-list">
 
+                <div class="sky-container">
+                    <div class="star-field"></div>
+                    <div class="tech-moon"></div>
+                    <div class="meteor"></div>
+                </div>
 
+
+                <div class="cosmic-horizon">
+                    <div class="star-field"></div>
+                    <div class="tech-moon"></div>
+                    <div class="shooting-stone"></div>
+
+                    <div class="clouds cloud-2"></div>
+                    <div class="clouds cloud-3"></div>
+
+                    <div class="ocean-container">
+                        <div class="wave wave1"></div>
+                        <div class="wave wave2"></div>
+                    </div>
+                </div>
 
 
                 <div class="system-status">
@@ -189,30 +187,104 @@
 
 
 
-    <section class="about-cinematic">
 
-        <canvas id="stars"></canvas>
 
-        <div class="about-content">
-            <div class="card" id="card">
 
-                <h1 class="name">Jyothi Devappa</h1>
 
-                <h2 class="role">Full Stack Developer</h2>
 
-                <p class="desc">
-                    Building immersive web experiences with modern technologies.
-                    Focused on performance, creativity, and next-level UI interactions
-                    that feel alive and engaging.
-                </p>
 
-                <a href="#" class="btn">View My Work</a>
 
-            </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="calm-horizon" id="about">
+    <div class="sky-background">
+        <div class="stars-container" id="stars-field"></div>
+        <div class="cinematic-moon"></div>
+        
+        <div class="mountain-range">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path d="M0,224L120,192C240,160,480,96,720,112C960,128,1200,224,1320,272L1440,320L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z" fill="rgba(0, 217, 255, 0.05)"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="hero-interface">
+        <div class="status-content">
+            <span class="label">LOCATION:</span>
+            <span class="value">SKY_SECTOR_07</span>
         </div>
 
-    </section>
+        <!-- <h1 class="about_name">hello...! i am J</h1> -->
 
+        <div class="hero-interface">
+    <h1 class="about_name">
+        HELL<span class="cat-o">
+            <img src="assets/cat-awake.gif" alt="cat">
+        </span>...!
+    </h1>
+
+    <!-- <h1 class="about_name interactive-reveal">
+        I AM <span class="reveal-text" data-full="JYOTHI DEVAPPA">J</span>
+        <span class="hint-dot"></span>
+    </h1>
+     -->
+
+
+  
+<!--     
+    <div class="j-container">
+        <span class="big-j">J</span>
+        
+        <img src="Untitled file.gif" class="sitting-cat" alt="cat">
+        
+        <span class="hidden-initials">YOTHI DEVAPPA</span>
+        
+        <span class="magic-sparkle"></span>
+    </div>
+     -->
+
+     <div class="j-container" id="magic-trigger">
+    <span class="big-j">J</span>
+    <img src="assets/cat-sitting.gif" class="sitting-cat" id="cat-actor" alt="cat">
+    
+      <p class="story-description">
+            I build creative digital experiences that feel like a breath of fresh air. 
+            No corporate fluff, just pure code and design.
+        </p>
+
+ 
+</div>
+
+     
+     <a href="about.html" target="_blank" class="about-resume-btn">
+    More Info? <i class="fas fa-arrow-right"></i>
+</a>
+
+
+    </div>
+    <div class="water-scene">
+        <div class="tiny-boat">⛵</div>
+        <div class="waves-layer">
+            <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none">
+                <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+                <g class="parallax-waves">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0, 217, 255, 0.1)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 217, 255, 0.05)" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</section>
 
 
 
@@ -341,35 +413,6 @@
 
 
 
-    <script>
-
-        const nameElement = document.querySelector(".hero_name");
-        const targetValue = nameElement.dataset.value;
-        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-        function runOdometer() {
-            let iteration = 0;
-            clearInterval(nameElement.timer);
-
-            nameElement.timer = setInterval(() => {
-                nameElement.innerText = targetValue.split("")
-                    .map((letter, index) => {
-                        if (index < iteration) return targetValue[index];
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("");
-
-                if (iteration >= targetValue.length) clearInterval(nameElement.timer);
-                iteration += 1 / 3;
-            }, 50);
-        }
-
-        window.onload = runOdometer;
-        nameElement.onmouseenter = runOdometer;
-
-
-
-    </script>
 
     <div class="scroll-widget">
         <div class="scroll-text">SCROLLL</div>
@@ -386,68 +429,10 @@
 
 
 
-    <script>document.querySelector('.scroll-widget').addEventListener('click', () => {
-            window.scrollBy({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        });</script>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-
-
-
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector('#mobile-menu');
-            const navLinks = document.querySelector('#nav-list');
-
-            menuToggle.addEventListener('click', function () {
-                // Toggle 'is-active' class on both elements
-                menuToggle.classList.toggle('is-active');
-                navLinks.classList.toggle('is-active');
-            });
-
-            // Close menu when a link is clicked
-            document.querySelectorAll('.main-menu-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('is-active');
-                    navLinks.classList.remove('is-active');
-                });
-            });
-        });
-
-
-
-
-
-
-    </script>
-
-
-
-
-
-
-
-
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/index.js"></script>
     <script src="js/script.js"></script>
     <script src="js/port.js"></script>
 </body>

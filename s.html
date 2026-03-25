@@ -5,189 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jyothi | Full Stack Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+  
 
-
-
-    <link rel="stylesheet" href="s.css">
 
 
 
 
 </head>
 
+<style>
+
+body {
+    margin: 0;
+    background: black;
+    overflow: hidden;
+}
+</style>
+
 <body>
-    <div class="hero-container">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="videos/hero-banner.mp4" type="video/mp4">
-        </video>
 
-
-        <div class="overlay"></div>
-
-
-        <nav>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <div class="nav-links" id="nav-list">
-                <a href="#" class="active" img src="images/logo-2.gif">HOME</a> <span>|</span>
-                <a href="pages/projectss.html">PROJECTS</a> <span>|</span>
-                <a href="#">ABOUT</a> <span>|</span>
-                <a href="#">CONTACT</a>
-            </div>
-
-            <div class="logo">
-                <img src="images/logo-2.gif" alt="J Logo" class="logo-img">
-            </div>
-        </nav>
-
-
-
-
-
-        <div class="content-box">
-
-            <h1 class="hero-title">
-                <span class="intro">Hi, I'm</span>
-                <span class="hero_name">JyothiDevappa</span>
-            </h1>
-
-            <p class="subtitle">
-                I BUILD <span class="typing"></span>
-            </p>
-
-            <a href="resume.pdf" class="resume-btn" download>
-                RESUME <i class="fa-solid fa-circle-down"></i>
-            </a>
-
-        </div>
-
-
-
-        <div class="socials">
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-regular fa-envelope"></i></a>
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-        </div>
-    </div>
-
-
-
-
-
-<section class="about-cinematic">
-
-    <canvas id="stars"></canvas>
-
-    <div class="about-content">
-        <div class="card" id="card">
-
-            <h1 class="name">Jyothi Devappa</h1>
-
-            <h2 class="role">Full Stack Developer</h2>
-
-            <p class="desc">
-                Building immersive web experiences with modern technologies.
-                Focused on performance, creativity, and next-level UI interactions
-                that feel alive and engaging.
-            </p>
-
-            <a href="#" class="btn">View My Work</a>
-
-        </div>
-    </div>
-
-</section>
+<canvas id="canvas"></canvas>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<script>
-
-    
-
-// 🌌 CANVAS
-const canvas = document.getElementById("stars");
+<script> const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-let stars = [];
+let particles = [];
 
-for (let i = 0; i < 150; i++) {
-    stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        speed: Math.random() * 0.6
-    });
-}
+// Draw text first
+ctx.fillStyle = "white";
+ctx.font = "bold 120px Poppins";
+ctx.textAlign = "center";
+ctx.fillText("JYOTHI", canvas.width / 2, canvas.height / 2);
 
-function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+// Get pixel data of text
+const textData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "white";
-
-    stars.forEach(star => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        star.y += star.speed;
-
-        if (star.y > canvas.height) {
-            star.y = 0;
-            star.x = Math.random() * canvas.width;
+// Convert pixels → particles
+for (let y = 0; y < canvas.height; y += 4) {
+    for (let x = 0; x < canvas.width; x += 4) {
+        const index = (y * canvas.width + x) * 4;
+        if (textData.data[index + 3] > 128) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                tx: x,
+                ty: y,
+                size: 2
+            });
         }
+    }
+}
+
+// Clear text
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+// Animate particles forming text
+function animate() {
+    ctx.fillStyle = "rgba(0,0,0,0.2)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        // move towards target (text position)
+        p.x += (p.tx - p.x) * 0.05;
+        p.y += (p.ty - p.y) * 0.05;
+
+        ctx.fillStyle = "#00f0ff";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
     });
 
-    requestAnimationFrame(drawStars);
+    requestAnimationFrame(animate);
 }
-drawStars();
 
-/* 🖱️ 3D TILT */
-const card = document.getElementById("card");
-
-document.addEventListener("mousemove", (e) => {
-    let x = (window.innerWidth / 2 - e.clientX) / 25;
-    let y = (window.innerHeight / 2 - e.clientY) / 25;
-
-    card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-});
-
-</script>
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+animate();</script>
 </body>
 
 </html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic About</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+
+   
+
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav-links" id="nav-list">
+
+                <div class="sky-container">
+                    <div class="star-field"></div>
+                    <div class="tech-moon"></div>
+                    <div class="meteor"></div>
+                </div>
+
+                <div class="cosmic-horizon">
+                    <div class="star-field"></div>
+                    <div class="tech-moon"></div>
+                    <div class="shooting-stone"></div>
+
+                    <div class="clouds cloud-2"></div>
+                    <div class="clouds cloud-3"></div>
+
+                    <div class="ocean-container">
+                        <div class="wave wave1"></div>
+                        <div class="wave wave2"></div>
+                    </div>
+                </div>
+
+
+                <div class="system-status">
+                    <span><i class="fas fa-satellite"></i> CONNECTION: SECURE</span>
+                    <span><i class="fas fa-user-astronaut"></i> USER: JD-SYS</span>
+                </div>
+
+                <div class="main-menu-links">
+                    <a href="index.html" class="active"><i class="fas fa-terminal"></i> HOME</a>
+
+                    <div class="universal-sep"><i class="fas fa-code"></i></div> <a href="projects.html"><i
+                            class="fas fa-code-branch"></i> PROJECTS</a>
+
+                    <div class="universal-sep"><i class="fas fa-satellite-dish"></i></div> <a href="about.html"><i
+                            class="fas fa-microchip"></i> ABOUT</a>
+                </div>
+
+                <div class="mobile-socials">
+                    <div class="divider"><span>COMMS_PORT</span></div>
+                    <div class="social-icons">
+                        <a href="https://github.com/jyothi-system" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/jyothi-devappa" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="mailto:jyothidevappas@gmail.com"><i class="fas fa-envelope-open-text"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo">
+                <img src="assets/images/logo-2.gif" alt="J-System" class="logo-img">
+            </div>
+        </nav>
+
+
+    <section class="project-hub-section" id="theme-body">
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+
+        <div class="project-hub-container">
+
+            <div class="portfolio-tabs-container">
+                <button class="tab-btn active" onclick="switchTheme('default', this); filterProjects('all')">[ 1. ALL
+                    ]</button>
+                <button class="tab-btn" onclick="switchTheme('ecommerce', this); filterProjects('ecommerce')">[ 2.
+                    E-COMMERCE ]</button>
+                <button class="tab-btn" onclick="switchTheme('story', this); filterProjects('story')">[ 3. STORY TELLING
+                    ]</button>
+                <button class="tab-btn" onclick="switchTheme('portfolios', this); filterProjects('portfolios')">[ 4.
+                    PORTFOLIOS ]</button>
+                <button class="tab-btn" onclick="switchTheme('freelance', this); filterProjects('freelance')">[ 5.
+                    FREELANCE ]</button>
+                <button class="tab-btn" onclick="switchTheme('single-pages', this); filterProjects('single-pages')">[ 6.
+                    SINGLE PAGES ]</button>
+                <button class="tab-btn" onclick="switchTheme('code', this); filterProjects('code')">[ 7. CODE CORNER
+                    ]</button>
+                <button class="tab-btn" onclick="switchTheme('uiux', this); filterProjects('uiux')">[ 8. UI/UX DESIGNS
+                    ]</button>
+            </div>
+
+
+            <!-- ecommerece projects -->
+
+
+            <div class="project-hub-card tab-project-content" data-category="ecommerce">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="assets/images/e-commerce/juice-web1.png" alt="Juice Shop Web 1"></div>
+                            <div class="slide"><img src="assets/images/e-commerce/juice-web2.png" alt="Juice Shop Web 2"></div>
+                            <div class="slide"><img src="assets/images/e-commerce/juice-web3.png" alt="Juice Shop Web 3"></div>
+                            <div class="slide"><img src="assets/images/e-commerce/juice-web4.png" alt="Juice Shop Web 4"></div>
+                            <div class="slide"><img src="assets/images/e-commerce/juice-web5.png" alt="Juice Shop Web 5"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="mob1.jpg" class="mob-img" alt="Juice Shop Mobile 1"></div>
+                            <div class="slide"><img src="mob2.jpg" class="mob-img" alt="Juice Shop Mobile 2"></div>
+                            <div class="slide"><img src="mob3.jpg" class="mob-img" alt="Juice Shop Mobile 3"></div>
+                            <div class="slide"><img src="mob4.jpg" class="mob-img" alt="Juice Shop Mobile 4"></div>
+                            <div class="slide"><img src="mob5.jpg" class="mob-img" alt="Juice Shop Mobile 5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">JUICE SHOP</h3>
+                    <p class="project-hub-description">A modern e-commerce storefront designed for health products and
+                        fresh juices. Features high-contrast layouts and fluid interactions.</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">HTML_5</div>
+                        <div class="tech-badge">CSS_3</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- story telling  projects -->
+
+            <div class="project-hub-card tab-project-content" data-category="story">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="story-web1.jpg" alt="Story Web 1"></div>
+                            <div class="slide"><img src="story-web2.jpg" alt="Story Web 2"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="story-mob1.jpg" class="mob-img" alt="Story Mobile 1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">THE STORY OF HER DAYS</h3>
+                    <p class="project-hub-description">A VISUAL STORYTELLING EXPERIENCE TELLING TALES BLA BLA..,,</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">HTML_5</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- portfolios projects -->
+
+            <div class="project-hub-card tab-project-content" data-category="portfolios">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="portfolio-web1.jpg" alt="Portfolio Web 1"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="portfolio-mob1.jpg" class="mob-img" alt="Portfolio Mobile 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">DARK DEVELOPER HUB</h3>
+                    <p class="project-hub-description">A MODERN PORTFOLIO LAYOUT FEATURING TERMINALS..,,</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">HTML_5</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-hub-card tab-project-content" data-category="freelance">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="freelance-web1.jpg" alt="Freelance Web 1"></div>
+                            <div class="slide"><img src="freelance-web2.jpg" alt="Freelance Web 2"></div>
+                            <div class="slide"><img src="freelance-web3.jpg" alt="Freelance Web 3"></div>
+                            <div class="slide"><img src="freelance-web4.jpg" alt="Freelance Web 4"></div>
+                            <div class="slide"><img src="freelance-web5.jpg" alt="Freelance Web 5"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="freelance-mob1.jpg" class="mob-img" alt="Freelance Mobile 1">
+                            </div>
+                            <div class="slide"><img src="freelance-mob2.jpg" class="mob-img" alt="Freelance Mobile 2">
+                            </div>
+                            <div class="slide"><img src="freelance-mob3.jpg" class="mob-img" alt="Freelance Mobile 3">
+                            </div>
+                            <div class="slide"><img src="freelance-mob4.jpg" class="mob-img" alt="Freelance Mobile 4">
+                            </div>
+                            <div class="slide"><img src="freelance-mob5.jpg" class="mob-img" alt="Freelance Mobile 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- freelancing projects -->
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">freelancing projects</h3>
+                    <p class="project-hub-description">Custom designed hub produced for client requests. Built with
+                        dynamic content management and sleek visual controls.</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">LARAVEL</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-hub-card tab-project-content" data-category="single-pages">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="single-web1.jpg" alt="Single Page Web 1"></div>
+                            <div class="slide"><img src="single-web2.jpg" alt="Single Page Web 2"></div>
+                            <div class="slide"><img src="single-web3.jpg" alt="Single Page Web 3"></div>
+                            <div class="slide"><img src="single-web4.jpg" alt="Single Page Web 4"></div>
+                            <div class="slide"><img src="single-web5.jpg" alt="Single Page Web 5"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="single-mob1.jpg" class="mob-img" alt="Single Page Mobile 1">
+                            </div>
+                            <div class="slide"><img src="single-mob2.jpg" class="mob-img" alt="Single Page Mobile 2">
+                            </div>
+                            <div class="slide"><img src="single-mob3.jpg" class="mob-img" alt="Single Page Mobile 3">
+                            </div>
+                            <div class="slide"><img src="single-mob4.jpg" class="mob-img" alt="Single Page Mobile 4">
+                            </div>
+                            <div class="slide"><img src="single-mob5.jpg" class="mob-img" alt="Single Page Mobile 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">FUTURISTIC LOGIN PORTAL</h3>
+                    <p class="project-hub-description">High-contrast single page login system focusing on glassmorphism
+                        and subtle neon glow interactions.</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">HTML_5</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- single pages projects -->
+
+
+            <div class="project-hub-card tab-project-content" data-category="code">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="code-web1.jpg" alt="Code Web 1"></div>
+                            <div class="slide"><img src="code-web2.jpg" alt="Code Web 2"></div>
+                            <div class="slide"><img src="code-web3.jpg" alt="Code Web 3"></div>
+                            <div class="slide"><img src="code-web4.jpg" alt="Code Web 4"></div>
+                            <div class="slide"><img src="code-web5.jpg" alt="Code Web 5"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="code-mob1.jpg" class="mob-img" alt="Code Mobile 1"></div>
+                            <div class="slide"><img src="code-mob2.jpg" class="mob-img" alt="Code Mobile 2"></div>
+                            <div class="slide"><img src="code-mob3.jpg" class="mob-img" alt="Code Mobile 3"></div>
+                            <div class="slide"><img src="code-mob4.jpg" class="mob-img" alt="Code Mobile 4"></div>
+                            <div class="slide"><img src="code-mob5.jpg" class="mob-img" alt="Code Mobile 5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">ALGORITHM REPOSITORY</h3>
+                    <p class="project-hub-description">A collection of backend scripts and complex logic functions
+                        showcasing architecture and optimization.</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">JAVA</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+                             <!-- uiux projects -->
+
+            <div class="project-hub-card tab-project-content" data-category="uiux">
+                <div class="project-hub-visuals">
+                    <div class="view-toggle-terminal">
+                        <button class="toggle-node active"
+                            onclick="toggleProjectView('web', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-desktop"></i> WEB_INTERFACE
+                        </button>
+                        <button class="toggle-node"
+                            onclick="toggleProjectView('mobile', this, this.closest('.project-hub-visuals'))">
+                            <i class="fas fa-mobile-alt"></i> MOBILE_UPLINK
+                        </button>
+                    </div>
+
+                    <div class="project-hub-carousel">
+                        <div class="carousel-nav-overlay">
+                            <button class="nav-arrow" onclick="moveSlide(-1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="moveSlide(1, this.closest('.project-hub-visuals'))">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="gallery-strip active web-gallery">
+                            <div class="slide"><img src="uiux-web1.jpg" alt="UIUX Web 1"></div>
+                            <div class="slide"><img src="uiux-web2.jpg" alt="UIUX Web 2"></div>
+                            <div class="slide"><img src="uiux-web3.jpg" alt="UIUX Web 3"></div>
+                            <div class="slide"><img src="uiux-web4.jpg" alt="UIUX Web 4"></div>
+                            <div class="slide"><img src="uiux-web5.jpg" alt="UIUX Web 5"></div>
+                        </div>
+
+                        <div class="gallery-strip mobile-gallery">
+                            <div class="slide"><img src="uiux-mob1.jpg" class="mob-img" alt="UIUX Mobile 1"></div>
+                            <div class="slide"><img src="uiux-mob2.jpg" class="mob-img" alt="UIUX Mobile 2"></div>
+                            <div class="slide"><img src="uiux-mob3.jpg" class="mob-img" alt="UIUX Mobile 3"></div>
+                            <div class="slide"><img src="uiux-mob4.jpg" class="mob-img" alt="UIUX Mobile 4"></div>
+                            <div class="slide"><img src="uiux-mob5.jpg" class="mob-img" alt="UIUX Mobile 5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-hub-info">
+                    <div class="project-hub-tag">// CATEGORY_ACTIVE</div>
+                    <h3 class="project-hub-title">PREMIUM BOUTIQUE ASSETS</h3>
+                    <p class="project-hub-description">High-end visual mockups and interactive user experiences designed
+                        with elegant spacing and branding.</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-badge">CANVA</div>
+                    </div>
+                    <div class="project-hub-links">
+                        <a href="#" class="tech-link-btn live"><i class="fas fa-external-link-alt"></i> LIVE_PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script src="assets/js/projects.js"></script>
+
+</body>
+
+</html>

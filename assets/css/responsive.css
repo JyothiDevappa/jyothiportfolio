@@ -144,28 +144,6 @@
         transform: translateY(-7px) rotate(-135deg);
     }
 
-    /* 2. MAIN SLIDE-IN PANEL */
-    /* .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 75%;
-        height: 100vh;
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        z-index: 1000;
-        border-right: 1px solid rgba(0, 217, 255, 0.15);
-        padding: 40px 0;
-        overflow: hidden; 
-
-        background: radial-gradient(circle at 50% 50%, rgba(5, 5, 5, 0.98) 0%, rgba(0, 0, 0, 1) 100%),
-                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><circle cx="20%" cy="30%" r="1" fill="%23fff" opacity="0.3"/><circle cx="70%" cy="20%" r="1" fill="%23fff" opacity="0.3"/><circle cx="40%" cy="80%" r="1.5" fill="%23fff" opacity="0.4"/></svg>');
-        background-blend-mode: overlay;
-    } */
-
 
 
 
@@ -321,17 +299,6 @@
         text-shadow: 0 0 15px #ffaa00;
     }
 
-
-
-
-
-
-
-
-
-
-
-
     /* 6. ANIMATIONS */
     @keyframes engineBlast {
         0% {
@@ -473,198 +440,256 @@
 }
 
 
-.j-links {
-    display: none;
-}
-
-
-/* ================= MOBILE RESPONSIVE ================= */
+/* --- CORRECTED RESPONSIVE STYLES (768px and below) --- */
 @media (max-width: 768px) {
-
-    /* GLOBAL FIX */
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
+    
     .calm-horizon {
-        padding-left: 20px;
-        align-items: flex-start;
-        padding-top: 120px;
+        padding: 40px 20px;
+        align-items: flex-start; /* Keeps main container contents left-aligned */
     }
 
-    /* MOON */
+    /* 🌙 Moon spacing - moved inward from the edge */
     .cinematic-moon {
+        top: 30px;
+        right: 40px; 
         width: 60px;
         height: 60px;
-        top: 30px;
-        right: 30px;
+        box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 1);
     }
 
-    /* UFO */
-    .ufo-container {
-        top: 10%;
-        left: 10%;
-        font-size: 2rem;
-    }
-
-    /* MOUNTAIN */
-    .mountain-range {
-        bottom: 80px;
-        opacity: 0.2;
-    }
-
-    /* WATER */
-    .water-scene {
-        height: 120px;
-    }
-
-    .tiny-boat {
-        font-size: 16px;
-        bottom: 50px;
-    }
-
-    /* SCROLL WIDGET */
-    .scroll-widget {
-        right: 20px;
-        bottom: 20px;
-    }
-
-    .scroll-text {
-        font-size: 8px;
-    }
-
-    /* ABOUT SECTION */
-    .about-content-wrapper {
-        flex-direction: column;
+    /* 📍 Location stays at the far left edge */
+    .top-hud-group {
         align-items: flex-start;
-        padding: 40px 20px;
-        padding-left: 20px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    /* BIG NAME */
-    .about_name {
-        font-size: 5rem;
-        flex-wrap: wrap;
-        gap: 6px;
+    /* 👋 Hello shifts to a left-center spot */
+    .about_section_name {
+        font-size: 3.5rem;
+        margin-top: 30px!important;
+        align-self: flex-start;
+        margin-left: 10%; /* Pushes it away from the hard left edge */
     }
 
     .cat-o {
-        width: 55px;
-        height: 65px;
+        width: 45px;
+        height: 45px;
     }
 
-    /* J SECTION */
+    /* 🛠️ THE FIX: Stacks J-container on top and Bio on the bottom */
+    .about-content-wrapper {
+        flex-direction: column; /* Stacks everything vertically */
+        align-items: flex-start; /* Aligns everything to the left */
+        gap: 35px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 🐈 J, Cat, and Buttons grouping */
     .j-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        position: relative;
-    }
-
-    .j-visual-stack {
-        position: relative;
-    }
-
-    .j-links {
-        margin-left: 120px !important;
-
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 1rem !important;
-
-        border-left: 1px solid #00d9ff;
-        padding-left: 10px;
-
-        display: block;
-        white-space: nowrap;
-
-    }
-
-    .j-links a {
-        display: block;
-        color: #00d9ff;
-        text-decoration: none;
-        margin-bottom: 5px;
-    }
-
-    .j-links a:hover {
-        color: #fff;
-        text-shadow: 0 0 6px #00d9ff;
-    }
-
-    .j-links {
-        display: block;
+        flex-direction: row; /* Keeps J and the buttons side-by-side in their own row */
+        align-items: center;
+        gap: 30px;
+        width: auto;
     }
 
     .big-j {
-        font-size: 6rem;
+        font-size: 12rem !important; 
     }
 
     .sitting-cat {
-        width: 120px;
-        left: 2px !important;
+        width: 160px;
+        bottom: 15px;
+        left: 25px;
     }
 
-    /* TEXT */
-    .story-description {
-        font-size: 0.75rem;
-        line-height: 2.7;
-
-        text-align: justify;
+    /* Buttons stack vertically next to the J */
+    .quick-actions-sidebar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
     }
 
+    .sidebar-btn {
+        font-size: 0.8rem;
+        padding: 5px 0;
+        text-align: left;
+    }
+
+.career-content {
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 20px !important;  /* 🛠️ Adds that 30px clean space at the very bottom */
+}
+
+.status-terminal {
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    
+}
+
+.status-text {
+    font-size: 12px; /* Keeps your requested size for this screen width */
+}
+
+.story-description {
+    font-size: 0.8rem !important;
+    text-align: left; 
+    line-height: 1.8 !important;
+    
+    /* 🛠️ If you want a little extra gap between the terminal line and the bio paragraph */
+    margin-top: 15px !important; 
+}
     .code-line {
+        text-align: left;
         margin-bottom: 15px;
     }
 
-    /* STATUS TERMINAL */
-    .status-terminal {
-        padding: 8px 10px;
-            margin-top: -60px !important; /* move up */
+    .code-line:hover {
+        transform: translateX(5px); 
+    }
 
+    .status-card, .intern-content {
+        width: 85%;
+        padding: 30px 20px;
+    }
+}
+
+/* --- EXTRA SMALL SCREENS (Phones under 400px) --- */
+@media (max-width: 400px) {
+    
+    .calm-horizon {
+        padding: 30px 15px;
+    }
+
+    .cinematic-moon {
+        top: 20px;
+        right: 30px;
+        width: 45px;
+        height: 45px;
+    }
+
+.about_section_name {
+    font-size: 2.2rem;
+    margin-left: 5%; 
+}
+
+    /* Shrink J & Cat on super tight screens */
+    .big-j {
+        font-size: 7rem;
+    }
+
+    .sitting-cat {
+        width: 100px;
+        bottom: 6px;
+        left: 10px;
+    }
+
+
+    .sidebar-btn {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
     }
 
     .status-text {
-        font-size: 9px;
+        font-size: 10px;
     }
 
-    /* MODAL (ABOUT / INTERN) */
-    .status-card,
-    .intern-content,
-    .glass-panel {
-        width: 90%;
-        padding: 25px 20px;
+    .story-description {
+        font-size: 0.85rem;
     }
-
-    .intern-content h2 {
-        font-size: 1.2rem;
-    }
-
-    .intern-content p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    /* CLOSE BUTTON */
-    .close-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 18px;
-        top: 10px;
-        right: 10px;
-    }
-
 }
 
-@media (max-width: 480px) {
 
-    .j-links {
-        margin-left: 80px;   /* reduce horizontal push */
-        transform: translateY(-180%); /* reduce vertical shift */
-        font-size: 9px;      /* slightly smaller */
+/* --- EXTRA SMALL SCREENS (Phones under 400px) --- */
+@media (max-width: 400px) {
+    
+    .calm-horizon {
+        padding: 30px 15px;
     }
 
+    /* 🌙 Moon pushes inward so it doesn't touch the edge */
+    .cinematic-moon {
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 1);
+    }
+
+    /* 📍 Location stays far left edge */
+    .top-hud-group {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* 👋 Hello pushed down a bit and centered-left */
+    .about_section_name {
+        font-size: 2.2rem;
+        margin-left: 5%; 
+        margin-top: 25px; /* Pushed down from the location HUD */
+    }
+
+    /* 🛠️ Stacks everything vertically */
+    .about-content-wrapper {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    /* 🐈 J, Cat, and buttons in a row above text */
+    .j-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .big-j {
+        font-size: 7rem;
+    }
+
+    .sitting-cat {
+        width: 70px;
+        bottom: 6px;
+        left: 10px;
+    }
+
+    .sidebar-btn {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    /* 📄 Bio and Status terminals sit below J block, left-aligned */
+    .status-terminal {
+        justify-content: flex-start;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .status-text {
+        font-size: 10px;
+    }
+
+    .story-description {
+        font-size: 0.85rem;
+        text-align: left;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 1200px) {
@@ -1067,3 +1092,5 @@
         gap: 8px;
     }
 }
+
+

@@ -1,0 +1,563 @@
+       /* ============================================================
+                 ecommerece projects 
+   ============================================================ */
+       :root {
+           /* 1. Default / All (Galaxy Space Vibe) */
+           --bg-gradient: radial-gradient(circle at 50% 50%, #0a0a28 0%, #020208 80%);
+           --accent-color: #00d9ff;
+           --card-bg: rgba(10, 10, 35, 0.4);
+           --text-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+       }
+
+
+
+       [data-theme="ecommerce"] {
+    --bg-gradient: radial-gradient(circle at 50% 50%, #17110c 0%, #050302 80%);
+    --accent-color: #ffd4b2; /* Warm Apricot */
+    --card-bg: rgba(23, 17, 12, 0.75);
+    --card-border: rgba(255, 212, 178, 0.15);
+    --text-primary: #fdfaf7; /* Pure Silk White */
+    --text-secondary: #c2b1a3; /* Muted Taupe */
+    --text-shadow: 0 0 12px rgba(255, 212, 178, 0.35);
+}
+       /* 2. E-Commerce & Stores  */
+       /* [data-theme="ecommerce"] {
+           --bg-gradient: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #05010a 80%);
+           --accent-color: #ff0055;
+           --card-bg: rgba(26, 11, 46, 0.4);
+           --text-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
+       } */
+
+
+
+/* [data-theme="story"] {
+    --bg-gradient: linear-gradient(145deg, #0f0914 0%, #1a1024 60%, #291a3a 100%);
+    --accent-color: #e2d4f0; 
+    --card-bg: rgba(15, 9, 20, 0.75);
+    --card-border: rgba(226, 212, 240, 0.15);
+    --text-primary: #fdfaff; 
+    --text-secondary: #c2b4d6; 
+    --text-shadow: 0 0 15px rgba(226, 212, 240, 0.35);
+} */
+   
+[data-theme="story"] {
+    --bg-gradient: linear-gradient(145deg, #140b18 0%, #23122b 60%, #341a40 100%);
+    --accent-color: #ffdce5; /* Softest Blush Pink */
+    --card-bg: rgba(20, 11, 24, 0.7);
+    --card-border: rgba(255, 220, 229, 0.15);
+    --text-primary: #fff5f7; /* Milky Pink White */
+    --text-secondary: #caaebb; /* Dusty Rose Purple */
+    --text-shadow: 0 0 15px rgba(255, 220, 229, 0.4);
+}
+
+       /* 4. Portfolios (Clean / Minimalist Aesthetic) */
+       [data-theme="portfolios"] {
+           --bg-gradient: radial-gradient(circle at 50% 50%, #111827 0%, #030712 80%);
+           --accent-color: #10b981;
+           --card-bg: rgba(31, 41, 55, 0.4);
+           --text-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+       }
+
+       /* 5. Freelance Work (Corporate / Trust Blue) */
+       [data-theme="freelance"] {
+           --bg-gradient: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 80%);
+           --accent-color: #3b82f6;
+           --card-bg: rgba(15, 23, 42, 0.6);
+           --text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+       }
+
+       /* 6. Single Pages (Sunset Gold / Energetic) */
+       [data-theme="single-pages"] {
+           --bg-gradient: radial-gradient(circle at 50% 50%, #291507 0%, #0a0502 80%);
+           --accent-color: #f97316;
+           --card-bg: rgba(41, 21, 7, 0.4);
+           --text-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+       }
+
+       /* 7. Code Corner (Hacker Green / Matrix Vibe) */
+       [data-theme="code"] {
+           --bg-gradient: radial-gradient(circle at 50% 50%, #051405 0%, #000500 80%);
+           --accent-color: #00ff66;
+           --card-bg: rgba(0, 20, 0, 0.4);
+           --text-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
+       }
+
+       /* 8. UI/UX Designs (Soft Pastel / Purple & Indigo Creative) */
+       [data-theme="uiux"] {
+           --bg-gradient: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0a0a1a 80%);
+           --accent-color: #a855f7;
+           --card-bg: rgba(30, 27, 75, 0.4);
+           --text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+       }
+
+       /* ============================================================
+   BASE LAYOUT
+   ============================================================ */
+       body {
+           margin: 0;
+           background: #020208 !important;
+           overflow-x: hidden;
+           font-family: 'Poppins', sans-serif;
+           transition: background 0.8s ease;
+       }
+
+       .project-hub-section {
+        margin-top: 40px !important;
+           padding: 80px 5%;
+           background: var(--bg-gradient);
+           min-height: 100vh;
+           color: #fff;
+           position: relative;
+           overflow: hidden;
+           transition: background 0.8s ease, color 0.5s ease;
+       }
+
+       /* Cyber grid overlay */
+       .project-hub-section::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+               linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+           background-size: 30px 30px;
+           pointer-events: none;
+       }
+
+       /* Shooting star effects */
+       .star {
+           position: absolute;
+           background: linear-gradient(90deg, #fff, transparent);
+           height: 2px;
+           filter: drop-shadow(0 0 6px var(--accent-color));
+           animation: shooting 3s linear infinite;
+           opacity: 0;
+       }
+
+       .star-1 {
+           width: 100px;
+           top: 10%;
+           left: -10%;
+           animation-delay: 0.5s;
+       }
+
+       .star-2 {
+           width: 150px;
+           top: 30%;
+           left: -10%;
+           animation-delay: 2s;
+       }
+
+       .star-3 {
+           width: 80px;
+           top: 70%;
+           left: -10%;
+           animation-delay: 1.2s;
+       }
+
+       @keyframes shooting {
+           0% {
+               transform: translateX(0) translateY(0) rotate(-30deg);
+               opacity: 1;
+           }
+
+           10% {
+               opacity: 1;
+           }
+
+           100% {
+               transform: translateX(1000px) translateY(577px) rotate(-30deg);
+               opacity: 0;
+           }
+       }
+
+       /* --- NEW TABS ROW (SCROLLABLE ON MOBILE) --- */
+       .portfolio-tabs-container {
+           max-width: 1000px;
+           margin: 0 auto 37px auto;
+           display: flex;
+           gap: 15px;
+           overflow-x: auto;
+           padding-bottom: 10px;
+           scrollbar-width: none;
+           flex-wrap: wrap;
+
+           justify-content: center;
+       }
+
+       .portfolio-tabs-container::-webkit-scrollbar {
+           display: none;
+           /* Chrome/Safari */
+       }
+
+       .tab-btn {
+           flex: 0 1 auto;
+           background: rgba(255, 255, 255, 0.03);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           color: rgba(255, 255, 255, 0.6);
+           padding: 10px 15px;
+           border-radius: 12px;
+           font-family: 'JetBrains Mono', monospace;
+           font-size: 15px;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           backdrop-filter: blur(10px);
+       }
+
+       .tab-btn:hover {
+           background: rgba(255, 255, 255, 0.08);
+           color: #fff;
+       }
+
+       .tab-btn.active {
+           background: rgba(255, 255, 255, 0.1);
+           color: var(--accent-color);
+           border-color: var(--accent-color);
+           box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+       }
+
+       /* Dynamic heading accent */
+       .project-hub-heading {
+           font-family: 'Orbitron', sans-serif;
+           font-size: 2.5rem;
+           text-align: center;
+           margin-bottom: 40px;
+           letter-spacing: 5px;
+           color: inherit;
+           text-shadow: var(--text-shadow);
+           transition: text-shadow 0.8s ease;
+       }
+
+       .tech-bracket {
+           color: var(--accent-color);
+           text-shadow: 0 0 10px var(--accent-color);
+       }
+
+       /* --- BENTO CARD LAYOUT --- */
+       /* .project-hub-card {
+           display: grid;
+           grid-template-columns: 1.2fr 0.8fr;
+           gap: 40px;
+           background: var(--card-bg);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           padding: 40px;
+           border-radius: 24px;
+           backdrop-filter: blur(20px);
+           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+           max-width: 1200px;
+           margin: 0 auto;
+           transition: background 0.8s ease;
+       } */
+
+       /* --- BENTO CARD LAYOUT --- */
+        .project-hub-card {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 40px; /* 👈 ADD THIS LINE HERE */
+            transition: background 0.8s ease;
+        }
+
+       /* --- VISUALS & TOGGLE --- */
+       .project-hub-visuals {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+       }
+
+       .view-toggle-terminal {
+           display: flex;
+           gap: 15px;
+           margin-bottom: 25px;
+           background: rgba(0, 0, 0, 0.3);
+           padding: 10px;
+           border-radius: 12px;
+           border: 1px solid rgba(255, 255, 255, 0.05);
+           width: fit-content;
+       }
+
+       .toggle-node {
+           background: transparent;
+           border: 1px solid transparent;
+           color: rgba(255, 255, 255, 0.4);
+           padding: 10px 20px;
+           font-size: 11px;
+           font-family: 'JetBrains Mono', monospace;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           border-radius: 8px;
+           display: flex;
+           align-items: center;
+           gap: 8px;
+       }
+
+       .toggle-node.active {
+           background: rgba(255, 255, 255, 0.05);
+           color: var(--accent-color);
+           border-color: rgba(255, 255, 255, 0.1);
+           text-shadow: 0 0 10px var(--accent-color);
+       }
+
+       /* --- CAROUSEL --- */
+       .project-hub-carousel {
+           position: relative;
+           width: 100%;
+           height: 480px;
+           background: rgba(0, 0, 0, 0.3);
+           border: 1px solid rgba(255, 255, 255, 0.05);
+           border-radius: 16px;
+           overflow: hidden;
+       }
+
+       .gallery-strip {
+           display: flex;
+           height: 100%;
+           width: 100%;
+           transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+           position: absolute;
+           top: 0;
+           left: 0;
+           opacity: 0;
+           pointer-events: none;
+       }
+
+       .gallery-strip.active {
+           opacity: 1;
+           pointer-events: auto;
+       }
+
+       .slide {
+           flex: 0 0 100%;
+           width: 100%;
+           height: 100%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           padding: 30px;
+           box-sizing: border-box;
+       }
+
+       .slide img {
+           max-height: 100%;
+           max-width: 100%;
+           object-fit: contain;
+           border-radius: 8px;
+           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+       }
+
+       .slide img.mob-img {
+           max-height: 90%;
+           border: 12px solid #0d0d1a;
+           border-radius: 36px;
+           box-shadow: 0 0 0 2px var(--accent-color), 0 20px 40px rgba(0, 0, 0, 0.8);
+       }
+
+       /* Nav Arrows */
+       .carousel-nav-overlay {
+           position: absolute;
+           top: 50%;
+           width: 100%;
+           display: flex;
+           justify-content: space-between;
+           transform: translateY(-50%);
+           padding: 0 20px;
+           box-sizing: border-box;
+           pointer-events: none;
+           z-index: 5;
+       }
+
+       .nav-arrow {
+           width: 45px;
+           height: 45px;
+           background: rgba(0, 0, 0, 0.6);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           color: #fff;
+           border-radius: 50%;
+           cursor: pointer;
+           pointer-events: auto;
+           transition: 0.3s;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+
+       .nav-arrow:hover {
+           background: var(--accent-color);
+           color: #000;
+           box-shadow: 0 0 20px var(--accent-color);
+           transform: scale(1.1);
+       }
+
+       /* --- INFO SECTION --- */
+       .project-hub-info {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           padding-left: 10px;
+       }
+
+       .project-hub-tag {
+           color: var(--accent-color);
+           font-family: 'JetBrains Mono', monospace;
+           font-size: 12px;
+           letter-spacing: 3px;
+           margin-bottom: 15px;
+       }
+
+       .project-hub-title {
+           font-family: 'Orbitron', sans-serif;
+           font-size: 2.2rem;
+           margin-bottom: 20px;
+           font-weight: 700;
+       }
+
+       .project-hub-description {
+           color: inherit;
+           opacity: 0.7;
+           line-height: 1.8;
+           margin-bottom: 30px;
+           font-size: 0.95rem;
+       }
+
+       .tech-stack-container {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 10px;
+           margin-bottom: 35px;
+       }
+
+       .tech-badge {
+           background: rgba(255, 255, 255, 0.05);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           padding: 6px 14px;
+           border-radius: 6px;
+           font-family: 'JetBrains Mono', monospace;
+           font-size: 11px;
+           color: inherit;
+       }
+
+       .project-hub-links {
+           display: flex;
+           gap: 20px;
+       }
+
+       .tech-link-btn {
+           padding: 14px 28px;
+           text-decoration: none;
+           font-family: 'JetBrains Mono', monospace;
+           font-size: 12px;
+           font-weight: 600;
+           transition: 0.4s ease;
+           border-radius: 8px;
+           display: flex;
+           align-items: center;
+           gap: 10px;
+       }
+
+       .tech-link-btn.live {
+           background: var(--accent-color);
+           color: #000;
+           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+       }
+
+       .tech-link-btn.source {
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           color: inherit;
+           background: rgba(255, 255, 255, 0.05);
+       }
+
+       .tech-link-btn:hover {
+           transform: translateY(-4px);
+       }
+
+       /* ============================================================
+   BULLETPROOF RESPONSIVE DESIGN
+   ============================================================ */
+
+       /* Tablet & Small Laptops (Under 992px) */
+       @media (max-width: 992px) {
+           .project-hub-card {
+               grid-template-columns: 1fr !important;
+               gap: 30px;
+               padding: 25px;
+           }
+
+           .project-hub-info {
+               padding-left: 0;
+           }
+       }
+
+       /* Standard Mobile Screens (Under 768px) */
+       @media (max-width: 768px) {
+           .project-hub-section {
+               padding: 60px 15px;
+           }
+
+           .project-hub-heading {
+               font-size: 1.1rem;
+           }
+
+           .project-hub-carousel {
+               height: 320px;
+           }
+
+           .slide {
+               padding: 15px;
+           }
+
+           .project-hub-title {
+               font-size: 1.6rem;
+           }
+
+           .tech-link-btn {
+               flex: 1;
+               justify-content: center;
+           }
+
+           /* Combined Tabs code here so it's not duplicated! */
+           .portfolio-tabs-container {
+               flex-wrap: nowrap;
+               overflow-x: auto;
+               justify-content: flex-start;
+               padding-bottom: 10px;
+               scrollbar-width: none;
+               /* Hides scrollbar on Firefox */
+           }
+
+           .portfolio-tabs-container::-webkit-scrollbar {
+               display: none;
+               /* Hides scrollbar on Chrome/Safari */
+           }
+
+           .tab-btn {
+               flex: 0 0 auto;
+               /* Keeps tabs from shrinking while swiping */
+           }
+       }
+
+       /* Very Small Mobile Screens (Under 400px) */
+       @media (max-width: 400px) {
+           .project-hub-card {
+               padding: 15px;
+           }
+
+           .view-toggle-terminal {
+               flex-direction: column;
+               width: 100%;
+           }
+
+           .toggle-node {
+               width: 100%;
+               justify-content: center;
+           }
+       }

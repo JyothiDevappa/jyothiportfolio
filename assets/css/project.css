@@ -96,7 +96,7 @@
        body {
            margin: 0;
            background: #020208 !important;
-           overflow-x: hidden;
+           overflow-x: hidden !important;
            font-family: 'Poppins', sans-serif;
            transition: background 0.8s ease;
        }

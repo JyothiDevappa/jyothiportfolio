@@ -1,9 +1,4 @@
-/* ==========================================
-   GLOBAL VARIABLES FOR SLIDER
-========================================== */
-// We removed the single webIndex and mobIndex variables. 
-// Instead, we will store the current slide index directly on the HTML element 
-// so all 8 projects can have their own independent slide position!
+
 
 /* ==========================================
    TABS & FILTERING SYSTEM

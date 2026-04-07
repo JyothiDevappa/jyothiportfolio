@@ -1,4 +1,25 @@
-// prelode
+// Handles mobile menu toggle (open/close) and auto-close on link click
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector('#mobile-menu');
+    const navLinks = document.querySelector('#nav-list');
+
+    menuToggle.addEventListener('click', function () {
+        menuToggle.classList.toggle('is-active');
+        navLinks.classList.toggle('is-active');
+    });
+
+    document.querySelectorAll('.main-menu-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('is-active');
+            navLinks.classList.remove('is-active');
+        });
+    });
+});
+
+
+
+
+
 
 window.addEventListener('load', () => {
     const progress = document.querySelector('.progress-fill');
@@ -31,55 +52,6 @@ window.addEventListener('load', () => {
         }
     }, 80); // Ticks every 80ms (2x faster than your 160ms version)
 });
-
-
-
-
-// Handles mobile menu toggle (open/close) and auto-close on link click
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector('#mobile-menu');
-    const navLinks = document.querySelector('#nav-list');
-
-    menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('is-active');
-        navLinks.classList.toggle('is-active');
-    });
-
-    document.querySelectorAll('.main-menu-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('is-active');
-            navLinks.classList.remove('is-active');
-        });
-    });
-});
-
-
-// Creates a random letter animation effect (odometer style) for the hero name
-
-
-const nameElement = document.querySelector(".hero_name");
-const targetValue = nameElement.dataset.value;
-const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-function runOdometer() {
-    let iteration = 0;
-    clearInterval(nameElement.timer);
-
-    nameElement.timer = setInterval(() => {
-        nameElement.innerText = targetValue.split("")
-            .map((letter, index) => {
-                if (index < iteration) return targetValue[index];
-                return chars[Math.floor(Math.random() * chars.length)];
-            })
-            .join("");
-
-        if (iteration >= targetValue.length) clearInterval(nameElement.timer);
-        iteration += 1 / 3;
-    }, 50);
-}
-
-window.onload = runOdometer;
-nameElement.onmouseenter = runOdometer;
 
 
 // Smooth scrolls down one screen height when scroll widget is clicked

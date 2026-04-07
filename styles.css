@@ -1,15 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+/* ============================================================
+   GLOBAL SETTINGS & VARIABLES
+   ============================================================ */
+:root {
+    --glow-color: rgba(0, 150, 255, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    background-color: #000;
+    width: 100%;
+    overflow-x: hidden;
+    background: transparent !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 #preloader {
     position: fixed;
     inset: 0;
-    background: #0a0a0a;
+    background: #0a0a0a; /* Deep black to match coder vibe */
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #00d9ff;
-    /* Cyber blue */
+    color: #00d9ff; /* Cyber blue */
     font-family: 'Orbitron', 'Space Grotesk', sans-serif;
     transition: opacity 0.6s ease-out;
 }
@@ -59,47 +86,9 @@
 
 /* Tea Floating Animation */
 @keyframes steam {
-
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.8;
-    }
-
-    50% {
-        transform: translateY(-15px) scale(1.1);
-        opacity: 1;
-    }
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-15px) scale(1.1); opacity: 1; }
 }
-
-/* ============================================================
-   GLOBAL SETTINGS & VARIABLES
-   ============================================================ */
-:root {
-    --glow-color: rgba(0, 150, 255, 0.6);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.15);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-html,
-body {
-    width: 100%;
-    overflow-x: hidden;
-    background: transparent !important;
-    font-family: 'Poppins', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 /* ============================================================
    NAVLINK SECTION (TECHIE GALAXY NAVBAR)
    ============================================================ */
@@ -231,340 +220,95 @@ nav {
    ============================================================ */
 
 /* --- BACKGROUND VIDEO CONFIG --- */
-#bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
 
 /* ================= HERO CONTAINER (CENTERED) ================= */
+/* --- THE BACKGROUND MAGIC --- */
 .hero-container {
-    position: relative;
     height: 100vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    background: #050505;
     overflow: hidden;
-    background-color: #000;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.10) 0%, transparent 70%);
+    position: relative;
 }
 
-/* THE TECH OVERLAY (Lightened to show video) */
-.hero-container::before {
-    content: "";
+.bg-grid {
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(rgba(0, 217, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 217, 255, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: 1;
-    pointer-events: none;
+    background-image: linear-gradient(rgba(0, 217, 255, 0.05) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 
-/* THE DARK HUD SHIELD - HIGH DARKNESS / LOW VISIBILITY ON RIGHT */
-.hero-container::after {
-    content: "";
+/* Floating Glow Blobs */
+.blob-1, .blob-2 {
     position: absolute;
-    inset: 0;
-    /* We use 'to left' to keep the right side dark */
-    background: linear-gradient(to left,
-            rgba(0, 0, 0, 0.85) 10%,
-            rgba(0, 0, 0, 0.95) 100%,
-            rgba(0, 0, 0, 1) 100%,
-            rgba(0, 0, 0, 0.7) 190%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
     z-index: 1;
-    pointer-events: none;
+    animation: float 10s infinite alternate;
+}
+.blob-2 { background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%); right: 10%; bottom: 10%; animation-delay: -5s; }
+
+@keyframes float { 
+    from { transform: translate(0, 0); } 
+    to { transform: translate(50px, 100px); } 
 }
 
-/* --- THE CONTENT BOX --- */
-.content-box {
-    z-index: 5;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.intro {
-    font-size: 1rem;
-    color: #38BDF8;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-
-.hero-interface {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* --- STATUS & PROGRESS LAYERS --- */
-.status-content,
-.progress-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.label {
-    font-size: 11px;
-    color: rgba(0, 217, 255, 0.5);
-    /* Sky Blue tint */
-    letter-spacing: 2px;
-}
-
-.value {
-    font-size: 11px;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
-}
-
-/* --- THE NAME (Large & Sharp) --- */
-
-
-.line-decorator {
-    width: 100%;
-    max-width: 500px;
-    height: 1px;
-    background: linear-gradient(90deg, #00d9ff, transparent);
-    opacity: 0.2;
-    margin-top: 10px;
-}
-
-/* ================= SUBTITLE (System Terminal Style) ================= */
-.subtitle-frame {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.subtitle {
-    font-size: 1.8rem;
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    /* Best for tech look */
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* The [ ] Brackets */
-.tech-bracket {
-    color: #00d9ff;
-    font-weight: 300;
-    opacity: 0.5;
-    animation: bracketPulse 2s infinite ease-in-out;
-}
-
-.typing {
-    color: #00d9ff;
-    font-weight: 700;
-    /* Neon Glow */
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.7),
-        0 0 20px rgba(0, 217, 255, 0.3);
+/* --- THE GLASS CARD --- */
+.glass-card {
     position: relative;
-    padding-right: 8px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* THE TECH CURSOR */
-.typing::after {
-    content: "";
-    position: absolute;
-    right: -5px;
-    top: 10%;
-    width: 3px;
-    height: 80%;
-    background: #00d9ff;
-    box-shadow: 0 0 12px #00d9ff;
-    animation: blinkCursor 0.8s step-end infinite;
-}
-
-/* ================= THE RESUME BUTTON (Geometric Tech Cut) ================= */
-.resume-btn {
+/* Status Chip */
+.status-chip {
     display: inline-flex;
     align-items: center;
-    width: fit-content;
-    padding: 12px 35px;
-    background: rgba(0, 217, 255, 0.05);
-    border: 1px solid #00d9ff;
-    color: #00d9ff;
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 4px;
-    font-weight: 700;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-    /* Geometric Tech Cut */
-    clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 100%, 10% 100%, 0% 70%);
+    gap: 8px;
+    background: rgba(0, 217, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    margin-bottom: 25px;
 }
+.pulse { width: 6px; height: 6px; background: #00d9ff; border-radius: 50%; animation: pulse 1.5s infinite; }
+.status-text { color: #00d9ff; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; }
 
-.resume-btn i {
-    margin-left: 15px;
-    transition: transform 0.3s;
-}
+/* Text Styling */
+.hi { display: block; color: #94a3b8; font-size: 1.1rem; margin-bottom: 5px; }
+.name { color: #fff; font-size: 3rem; font-weight: 700; margin: 0; }
+.typing-container { margin: 15px 0 35px; font-size: 1.5rem; color: #fff; }
+.typing { color: #00d9ff; font-weight: 600; }
 
-.resume-btn:hover {
-    background: #00d9ff;
-    color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
-}
+/* --- BUTTONS & ACTIONS --- */
+.action-row { display: flex; align-items: center; gap: 30px; }
 
-/* --- NAME GRADIENT & TEXT --- */
-/* Import a wider, more modern tech font if you haven't already */
+.resume-split { display: flex; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2); }
+.res-btn { padding: 12px 20px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 600; transition: 0.3s; background: rgba(255, 255, 255, 0.05); }
+.res-btn.view { border-right: 1px solid rgba(255, 255, 255, 0.2); }
+.res-btn:hover { background: #fff; color: #000; }
 
-.hero_name {
-    font-family: 'Syncopate', sans-serif;
-    /* Wide, futuristic aesthetic */
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0;
-    line-height: 2;
-    letter-spacing: 2px;
-    /* Increased spacing for premium feel */
-    text-transform: uppercase;
+.about-link { text-decoration: none; color: #94a3b8; font-size: 13px; font-weight: 600; letter-spacing: 1px; transition: 0.3s; }
+.about-link:hover { color: #00d9ff; }
+.arrow { transition: transform 0.3s; display: inline-block; }
+.about-link:hover .arrow { transform: translateX(5px); }
 
-    /* 1. Tri-Color Metallic Gradient (No pure white) */
-    background: linear-gradient(135deg,
-            #00d9ff 0%,
-            #7dd3fc 45%,
-            #1e40af 100%
-            /* Deep Cobalt */
-        );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+@keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
 
-    /* 2. Layered Design Effects */
-    position: relative;
-    filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.4));
-}
 
-/* 3. The "Cyber-Stroke" Design Element */
-.hero_name::after {
-    content: attr(data-value);
-    position: absolute;
-    left: 4px;
-    top: 2px;
-    z-index: -1;
-    -webkit-text-stroke: 1px rgba(0, 217, 255, 0.3);
-    -webkit-text-fill-color: transparent;
-    opacity: 0.5;
-}
 
-/* 4. Removing the white accent for a consistent glow */
-.name-accent {
-    color: inherit;
-    text-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
-}
 
-/* --- BUTTON GROUPING --- */
-.cta-group {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-top: 10px;
-}
 
-.action-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 100%, 10% 100%, 0% 70%);
-}
-
-/* About Button Style */
-.about-btn {
-    background: #38BDF8;
-    color: #000;
-    border: 1px solid #38BDF8;
-}
-
-.about-btn:hover {
-    background: transparent;
-    color: #38BDF8;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-}
-
-/* Resume Split Button Style */
-.resume-wrapper {
-    display: flex;
-    align-items: stretch;
-    border: 1px solid rgba(56, 189, 248, 0.5);
-    clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 100%, 10% 100%, 0% 70%);
-}
-
-.resume-view {
-    background: rgba(56, 189, 248, 0.1);
-    color: #38BDF8;
-    border: none;
-    padding-right: 15px;
-    clip-path: none;
-    /* Reset for the wrapper to handle it */
-}
-
-.resume-download {
-    display: flex;
-    align-items: center;
-    background: rgba(56, 189, 248, 0.2);
-    color: #38BDF8;
-    padding: 0 15px;
-    text-decoration: none;
-    border-left: 1px solid rgba(56, 189, 248, 0.5);
-    transition: background 0.3s;
-}
-
-.resume-download:hover,
-.resume-view:hover {
-    background: #38BDF8;
-    color: #000;
-}
-
-/* UI Icons */
-.action-btn i,
-.resume-download i {
-    margin-left: 10px;
-}
-
-/* ================= TECH SOCIAL HUB (Bottom Left) ================= */
-.tech-social-hub {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 100;
-}
-
-/* --- VERTICAL DATA RAIL --- */
-.social-rail {
-    position: absolute;
-    left: 0;
-    top: -40px;
-    width: 1px;
-    height: 30px;
-    background: linear-gradient(to bottom, transparent, #00d9ff);
-    box-shadow: 0 0 8px #00d9ff;
-}
 
 /* --- THE LINKS & LABELS --- */
 .social-links {
@@ -665,6 +409,8 @@ nav {
         transform: translateX(450%);
     }
 }
+
+
 
 
 /* --- SCROLL WIDGET POSITION --- */

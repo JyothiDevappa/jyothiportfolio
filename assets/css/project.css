@@ -12,14 +12,18 @@
 
 
        [data-theme="ecommerce"] {
-    --bg-gradient: radial-gradient(circle at 50% 50%, #17110c 0%, #050302 80%);
-    --accent-color: #ffd4b2; /* Warm Apricot */
-    --card-bg: rgba(23, 17, 12, 0.75);
-    --card-border: rgba(255, 212, 178, 0.15);
-    --text-primary: #fdfaf7; /* Pure Silk White */
-    --text-secondary: #c2b1a3; /* Muted Taupe */
-    --text-shadow: 0 0 12px rgba(255, 212, 178, 0.35);
-}
+           --bg-gradient: radial-gradient(circle at 50% 50%, #17110c 0%, #050302 80%);
+           --accent-color: #ffd4b2;
+           /* Warm Apricot */
+           --card-bg: rgba(23, 17, 12, 0.75);
+           --card-border: rgba(255, 212, 178, 0.15);
+           --text-primary: #fdfaf7;
+           /* Pure Silk White */
+           --text-secondary: #c2b1a3;
+           /* Muted Taupe */
+           --text-shadow: 0 0 12px rgba(255, 212, 178, 0.35);
+       }
+
        /* 2. E-Commerce & Stores  */
        /* [data-theme="ecommerce"] {
            --bg-gradient: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #05010a 80%);
@@ -30,7 +34,7 @@
 
 
 
-/* [data-theme="story"] {
+       /* [data-theme="story"] {
     --bg-gradient: linear-gradient(145deg, #0f0914 0%, #1a1024 60%, #291a3a 100%);
     --accent-color: #e2d4f0; 
     --card-bg: rgba(15, 9, 20, 0.75);
@@ -39,16 +43,19 @@
     --text-secondary: #c2b4d6; 
     --text-shadow: 0 0 15px rgba(226, 212, 240, 0.35);
 } */
-   
-[data-theme="story"] {
-    --bg-gradient: linear-gradient(145deg, #140b18 0%, #23122b 60%, #341a40 100%);
-    --accent-color: #ffdce5; /* Softest Blush Pink */
-    --card-bg: rgba(20, 11, 24, 0.7);
-    --card-border: rgba(255, 220, 229, 0.15);
-    --text-primary: #fff5f7; /* Milky Pink White */
-    --text-secondary: #caaebb; /* Dusty Rose Purple */
-    --text-shadow: 0 0 15px rgba(255, 220, 229, 0.4);
-}
+
+       [data-theme="story"] {
+           --bg-gradient: linear-gradient(145deg, #140b18 0%, #23122b 60%, #341a40 100%);
+           --accent-color: #ffdce5;
+           /* Softest Blush Pink */
+           --card-bg: rgba(20, 11, 24, 0.7);
+           --card-border: rgba(255, 220, 229, 0.15);
+           --text-primary: #fff5f7;
+           /* Milky Pink White */
+           --text-secondary: #caaebb;
+           /* Dusty Rose Purple */
+           --text-shadow: 0 0 15px rgba(255, 220, 229, 0.4);
+       }
 
        /* 4. Portfolios (Clean / Minimalist Aesthetic) */
        [data-theme="portfolios"] {
@@ -102,7 +109,7 @@
        }
 
        .project-hub-section {
-        margin-top: 40px !important;
+           margin-top: 10px !important;
            padding: 80px 5%;
            background: var(--bg-gradient);
            min-height: 100vh;
@@ -176,7 +183,7 @@
        /* --- NEW TABS ROW (SCROLLABLE ON MOBILE) --- */
        .portfolio-tabs-container {
            max-width: 1000px;
-           margin: 0 auto 37px auto;
+           margin: 0 auto 35px auto;
            display: flex;
            gap: 15px;
            overflow-x: auto;
@@ -197,10 +204,10 @@
            background: rgba(255, 255, 255, 0.03);
            border: 1px solid rgba(255, 255, 255, 0.1);
            color: rgba(255, 255, 255, 0.6);
-           padding: 10px 15px;
-           border-radius: 12px;
+           padding: 10px 10px;
+           border-radius: 10px;
            font-family: 'JetBrains Mono', monospace;
-           font-size: 15px;
+           font-size: 14px;
            cursor: pointer;
            transition: all 0.3s ease;
            backdrop-filter: blur(10px);
@@ -235,8 +242,9 @@
            text-shadow: 0 0 10px var(--accent-color);
        }
 
+     
        /* --- BENTO CARD LAYOUT --- */
-       /* .project-hub-card {
+       .project-hub-card {
            display: grid;
            grid-template-columns: 1.2fr 0.8fr;
            gap: 40px;
@@ -248,25 +256,9 @@
            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
            max-width: 1200px;
            margin: 0 auto;
+           margin-bottom: 40px;
            transition: background 0.8s ease;
-       } */
-
-       /* --- BENTO CARD LAYOUT --- */
-        .project-hub-card {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 24px;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-bottom: 40px; /* 👈 ADD THIS LINE HERE */
-            transition: background 0.8s ease;
-        }
+       }
 
        /* --- VISUALS & TOGGLE --- */
        .project-hub-visuals {

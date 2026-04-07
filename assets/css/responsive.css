@@ -541,7 +541,6 @@
     text-align: left; 
     line-height: 1.8 !important;
     
-    /* 🛠️ If you want a little extra gap between the terminal line and the bio paragraph */
     margin-top: 15px !important; 
 }
     .code-line {
@@ -639,6 +638,7 @@
         flex-direction: column; 
         align-items: flex-start;
         gap: 25px;
+
     }
 
     /* 🐈 J, Cat, and buttons in a row above text */

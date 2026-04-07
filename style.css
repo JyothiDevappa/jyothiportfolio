@@ -49,7 +49,7 @@ nav {
 /* ================= TECHIE ICON NAV ================= */
 .nav-links {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 2px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.6);
@@ -586,6 +586,10 @@ nav {
 
 
 /* ABOUT SECTION */
+.about-content-wrapper {
+    position: relative;
+    z-index: 10;
+}
 
 /* 🛠️ Main Section Wrapper */
 .calm-horizon {
@@ -719,7 +723,7 @@ nav {
     width: 100%;
     max-width: 1100px;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 60px;
 }
 
 /* --- J CONTAINER --- */
@@ -860,20 +864,24 @@ nav {
 
 .highlight-experince {
     display: inline-block;
-    color: #00d9ff;
+    color: #ffffff;
     font-weight: 600;
-    background: rgba(0, 217, 255, 0.1);
+    /* background: rgba(3, 87, 102, 0.1); */
+    background: #00d9ff;
     padding: 2px 10px;
     border-radius: 4px;
     border: 1px solid #00d9ff;
     cursor: pointer !important;
     transition: all 0.2s ease;
+
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+
 }
 
 .highlight-experince:hover {
-    background: #00d9ff;
-    color: #000;
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+    background: #ffffff;
+    color: #4cadb9;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 /* Overlays & Modals */
@@ -908,6 +916,21 @@ nav {
     box-shadow: 0 0 50px rgba(0, 217, 255, 0.2);
     position: relative;
     text-align: left;
+}
+
+
+.card-footer {
+    color: #00e6ff;
+    /* brighter neon blue */
+    font-size: 13px;
+    /* slightly smaller than body */
+    font-style: italic;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    opacity: 0.9;
+
+    border-left: 2px solid rgba(0, 230, 255, 0.5);
+    padding-left: 12px;
 }
 
 .close-btn {
@@ -945,6 +968,117 @@ nav {
     opacity: 0.3;
     z-index: 1;
     left: 0;
+}
+
+
+
+/* UFO Wrapper - fixed at top center */
+.ufo-wrapper {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    z-index: 2;
+
+    animation: ufoDrift 10s ease-in-out infinite;
+}
+
+/* SVG styling */
+.ufo-svg {
+    width: 100%;
+    display: block;
+
+    filter: drop-shadow(0 0 6px rgba(0, 255, 200, 0.4));
+}
+
+@keyframes ufoDrift {
+    0% {
+        transform: translate(-50%, 0px);
+    }
+
+    25% {
+        transform: translate(-54%, -5px);
+    }
+
+    50% {
+        transform: translate(-50%, -10px);
+    }
+
+    75% {
+        transform: translate(-46%, -5px);
+    }
+
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
+
+
+
+
+
+
+
+
+.boat-wrapper {
+    position: absolute;
+    bottom: 50px;
+    left: -200px;
+    width: 200px;
+    z-index: 5;
+
+    animation: boatMove 60s linear infinite;
+}
+
+.boat-svg {
+    width: 100%;
+    height: auto;
+
+    animation: floatBoat 3s ease-in-out infinite;
+}
+
+.boat-svg path {
+    filter: drop-shadow(0 0 6px #00d9ff);
+}
+
+
+
+@keyframes blink {
+
+    0%,
+    90%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    95% {
+        transform: scaleY(0.1);
+    }
+}
+
+/* Move across water */
+@keyframes boatMove {
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+/* Float like waves */
+@keyframes floatBoat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
 }
 
 .water-scene {

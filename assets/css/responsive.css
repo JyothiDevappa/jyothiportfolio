@@ -1,14 +1,3 @@
-@media (max-width: 768px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-
-}
-
-
 
 /* ================= 1. DESKTOP NAV (Only shows above 769px) ================= */
 @media screen and (min-width: 769px) {
@@ -25,7 +14,7 @@
         gap: 30px;
         align-items: center;
         font-family: 'JetBrains Mono', monospace;
-        font-size: 11px;
+        font-size: 8px;
         letter-spacing: 2px;
     }
 
@@ -41,6 +30,11 @@
 /* ================= 2. MOBILE HUD (Only shows below 768px) ================= */
 @media screen and (max-width: 768px) {
 
+      html,
+    body {
+        overflow-x: hidden;
+    }
+
     /* Hide desktop-only elements */
     .nav-links span {
         display: none;
@@ -52,26 +46,7 @@
         z-index: 1001;
     }
 
-    /* THE MOBILE PANEL */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        /* Hidden */
-        width: 85%;
-        height: 100vh;
-        background: rgba(5, 5, 5, 0.98);
-        backdrop-filter: blur(15px);
-        flex-direction: column !important;
-        /* Force vertical */
-        justify-content: space-between;
-        align-items: center;
-        transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        z-index: 1000;
-        padding: 60px 0;
-        border-right: 1px solid rgba(0, 217, 255, 0.15);
-    }
-
+   
     .nav-links.is-active {
         left: 0;
         display: flex !important;
@@ -90,36 +65,14 @@
         z-index: 2;
     }
 
-    /* FIX HERO CONTENT COLLAPSE */
-    .content-box {
-        position: absolute !important;
-        top: 20% !important;
-        left: 30px !important;
-        width: calc(100% - 60px) !important;
-        z-index: 5;
-    }
 
     /* HIDE SOCIAL HUB WHEN MENU IS OPEN */
     #mobile-menu.is-active~.tech-social-hub {
         display: none !important;
     }
-}
-
-/* ================= THE UNIVERSE HUD (Mobile Cleaned) ================= */
-@media screen and (max-width: 768px) {
 
 
-    .nav-links span {
-        display: none;
-    }
-
-    /* Hide desktop pipes */
-
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        z-index: 1001;
-    }
+      /* Hide desktop pipes */
 
     .menu-toggle .bar {
         display: block;
@@ -153,9 +106,7 @@
         top: 0;
         left: -100%;
         width: 75%;
-        /* Your preferred width */
         height: 100dvh;
-        /* 🔥 Fixes the mobile browser overflow/scroll issue */
         backdrop-filter: blur(10px);
 
         display: flex !important;
@@ -191,33 +142,7 @@
         left: 0;
         box-shadow: 10px 0 30px rgba(0, 217, 255, 0.1);
     }
-
-    /* 3. STATUS LOG & LINKS */
-    .system-status {
-        width: 80%;
-        font-size: 8px;
-        letter-spacing: 2px;
-        color: rgba(0, 217, 255, 0.3);
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
-        border-bottom: 1px dashed rgba(0, 217, 255, 0.05);
-        padding-bottom: 15px;
-    }
-
-
-    .main-menu-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        /* Tighter gap so it fits on small screens */
-        margin-top: 130px;
-        width: 100%;
-        z-index: 2;
-    }
-
+    
     .nav-links a {
         font-size: 16px;
         letter-spacing: 2px;
@@ -233,14 +158,19 @@
     }
 
 
-
-
-
-
-
-
-
-
+    /* 3. STATUS LOG & LINKS */
+    .system-status {
+        width: 80%;
+        font-size: 8px;
+        letter-spacing: 2px;
+        color: rgba(0, 217, 255, 0.3);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        border-bottom: 1px dashed rgba(0, 217, 255, 0.05);
+        padding-bottom: 15px;
+    }
 
 
 
@@ -319,139 +249,105 @@
             opacity: 0;
         }
     }
-}
-
-
-
-/* ================= THE FINAL MOBILE HUD FIX ================= */
-@media screen and (max-width: 768px) {
-
-
-    /* 2. MAIN CONTENT ZONE: Center-Top */
-    .content-box {
-        position: absolute !important;
-        top: 22% !important;
-        /* Locked in the Center-Top */
-        left: 50px !important;
-        width: calc(100% - 80px) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0 !important;
-    }
-
-    .intro {
-        font-size: 0.8rem !important;
-        margin-bottom: 5px !important;
-    }
-
-    .hero_name {
-        font-size: 2.2rem !important;
-        line-height: 1 !important;
-        margin-bottom: 25px !important;
-    }
-
-
-
-    /* 3. SUBTITLE ZONE: Pushed Downside */
-    .subtitle-frame {
-        position: relative !important;
-        height: 80px !important;
-        margin-top: 35px !important;
-
-        margin-bottom: 0 !important;
-        display: block !important;
-    }
-
-    .subtitle {
-        font-size: 1.1rem !important;
-        display: block !important;
-        width: 100% !important;
-        color: rgba(255, 255, 255, 0.8) !important;
-    }
-
-    .typing {
-        display: block !important;
-        margin-top: 8px !important;
-        /* Small extra gap between "I BUILD" and the typing words */
-        font-size: 2rem !important;
-        color: #00d9ff !important;
-    }
-
-
-    .resume-btn {
-        position: absolute !important;
-        top: calc(59% + 190px) !important;
-        left: 60px !important;
-        padding: 10px 25px !important;
-        font-size: 12px !important;
-        z-index: 10 !important;
-
-        display: inline-flex !important;
-        align-items: center !important;
-    }
-
-
 
 }
 
-@media screen and (max-width: 768px) {
 
-    /* --- 5. SOCIAL LINKS (Updated for Hero Only) --- */
-    .tech-social-hub {
-        position: absolute !important;
-        left: 20px !important;
-        bottom: 50px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-        z-index: 5 !important;
+/* --- UNIVERSAL RESPONSIVE OVERRIDES --- */
 
-        transition: opacity 0.3s ease;
+/* Tablets & Small Laptops (iPad, etc.) */
+@media (max-width: 1024px) {
+    .full-name {
+        font-size: 7vw; /* Keeps name on one line */
+        white-space: nowrap; 
+    }
+    
+    .button-space {
+        gap: 25px;
+    }
+}
+
+/* Mobile Devices (Realme, Oppo, iPhone, etc.) */
+@media (max-width: 768px) {
+    /* 1. Alignment Shift */
+    .identity-wrapper {
+        margin-top: -10vh; /* Moves it up for better thumb-reach */
+        width: 100%;
+        padding: 0 10px;
     }
 
-    /* This works if your JS adds 'is-active' to the menu button */
-    #mobile-menu.is-active~.tech-social-hub,
-    #nav-list.is-active~.tech-social-hub {
-        display: none !important;
-        opacity: 0 !important;
+    /* 2. Force Name on One Line */
+    .full-name {
+        font-size: 2.5rem; /* Adjusted so it fits any phone width in one row */
+        white-space: nowrap; 
+        letter-spacing: -1px;
+        display: block; 
     }
 
-    /* Keep your existing styling properties below */
-    .social-rail {
-        display: block !important;
-        height: 45px !important;
-        top: -55px !important;
-        width: 2px !important;
-        background: linear-gradient(to bottom, transparent, #00d9ff) !important;
+    .logo-initials {
+        font-size: 1rem;
+        letter-spacing: 10px;
     }
 
-    .social-item {
-        font-size: 1.5rem !important;
-        gap: 15px !important;
+    /* 3. Fix Typing Jump */
+    .build-engine {
+        min-height: 60px; /* Locked space so buttons don't move */
+        margin-top: 15px;
+        font-size: 13px;
     }
 
-    .social-label {
-        display: inline-block !important;
-        font-size: 7px !important;
-        letter-spacing: 4px !important;
-        opacity: 0.6 !important;
-        color: #00d9ff !important;
+    /* 4. Buttons: One below the other, Bigger size */
+    .button-space {
+        flex-direction: column; /* Stacks them */
+        gap: 20px;
+        width: 100%;
+        max-width: 280px; /* Standardizes width for all phones */
+        margin-top: 20px;
+    }
+
+    .liquid-btn {
+        width: 100%;
+        padding: 22px 0; /* Bigger vertical size */
+        font-size: 12px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .glass-fill {
+        /* Slightly normalize shape for mobile so text stays centered */
+        border-radius: 50% 20% 50% 20% / 20% 50% 20% 50%;
+    }
+
+  
+}
+
+/* Extra Small Screens (iPhone SE, small Realme) */
+@media (max-width: 380px) {
+    .full-name {
+        font-size: 1.9rem; /* Shrinks just enough to avoid horizontal scroll */
+    }
+    
+    .button-space {
+        max-width: 240px;
     }
 }
 
 
 /* --- CORRECTED RESPONSIVE STYLES (768px and below) --- */
 @media (max-width: 768px) {
-    
+
     .calm-horizon {
         padding: 40px 20px;
-        align-items: flex-start; /* Keeps main container contents left-aligned */
+        align-items: flex-start;
+        /* Keeps main container contents left-aligned */
     }
 
     /* 🌙 Moon spacing - moved inward from the edge */
     .cinematic-moon {
         top: 30px;
-        right: 40px; 
+        right: 40px;
         width: 60px;
         height: 60px;
         box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 1);
@@ -468,9 +364,10 @@
     /* 👋 Hello shifts to a left-center spot */
     .about_section_name {
         font-size: 3.5rem;
-        margin-top: 30px!important;
+        margin-top: 30px !important;
         align-self: flex-start;
-        margin-left: 10%; /* Pushes it away from the hard left edge */
+        margin-left: 10%;
+        /* Pushes it away from the hard left edge */
     }
 
     .cat-o {
@@ -480,8 +377,10 @@
 
     /* 🛠️ THE FIX: Stacks J-container on top and Bio on the bottom */
     .about-content-wrapper {
-        flex-direction: column; /* Stacks everything vertically */
-        align-items: flex-start; /* Aligns everything to the left */
+        flex-direction: column;
+        /* Stacks everything vertically */
+        align-items: flex-start;
+        /* Aligns everything to the left */
         gap: 35px;
         width: 100%;
         max-width: 100%;
@@ -489,14 +388,15 @@
 
     /* 🐈 J, Cat, and Buttons grouping */
     .j-container {
-        flex-direction: row; /* Keeps J and the buttons side-by-side in their own row */
+        flex-direction: row;
+        /* Keeps J and the buttons side-by-side in their own row */
         align-items: center;
         gap: 30px;
         width: auto;
     }
 
     .big-j {
-        font-size: 12rem !important; 
+        font-size: 12rem !important;
     }
 
     .sitting-cat {
@@ -518,41 +418,45 @@
         text-align: left;
     }
 
-.career-content {
-    width: 100%;
-    max-width: 100%;
-    padding-bottom: 20px !important;  /* 🛠️ Adds that 30px clean space at the very bottom */
-}
+    .career-content {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 20px !important;
+        /* 🛠️ Adds that 30px clean space at the very bottom */
+    }
 
-.status-terminal {
-    justify-content: flex-start;
-    text-align: left;
-    width: 100%;
-    max-width: 500px;
-    
-}
+    .status-terminal {
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
+        max-width: 500px;
 
-.status-text {
-    font-size: 12px; /* Keeps your requested size for this screen width */
-}
+    }
 
-.story-description {
-    font-size: 0.8rem !important;
-    text-align: left; 
-    line-height: 1.8 !important;
-    
-    margin-top: 15px !important; 
-}
+    .status-text {
+        font-size: 8px;
+        /* Keeps your requested size for this screen width */
+    }
+
+    .story-description {
+        font-size: 0.6rem !important;
+        text-align: left;
+        line-height: 1.6 !important;
+
+        margin-top: 15px !important;
+    }
+
     .code-line {
         text-align: left;
         margin-bottom: 15px;
     }
 
     .code-line:hover {
-        transform: translateX(5px); 
+        transform: translateX(5px);
     }
 
-    .status-card, .intern-content {
+    .status-card,
+    .intern-content {
         width: 85%;
         padding: 30px 20px;
     }
@@ -560,7 +464,7 @@
 
 /* --- EXTRA SMALL SCREENS (Phones under 400px) --- */
 @media (max-width: 400px) {
-    
+
     .calm-horizon {
         padding: 30px 15px;
     }
@@ -572,10 +476,10 @@
         height: 45px;
     }
 
-.about_section_name {
-    font-size: 2.2rem;
-    margin-left: 5%; 
-}
+    .about_section_name {
+        font-size: 2.2rem;
+        margin-left: 5%;
+    }
 
     /* Shrink J & Cat on super tight screens */
     .big-j {
@@ -606,7 +510,7 @@
 
 /* --- EXTRA SMALL SCREENS (Phones under 400px) --- */
 @media (max-width: 400px) {
-    
+
     .calm-horizon {
         padding: 30px 15px;
     }
@@ -629,13 +533,14 @@
     /* 👋 Hello pushed down a bit and centered-left */
     .about_section_name {
         font-size: 2.2rem;
-        margin-left: 5%; 
-        margin-top: 25px; /* Pushed down from the location HUD */
+        margin-left: 5%;
+        margin-top: 25px;
+        /* Pushed down from the location HUD */
     }
 
     /* 🛠️ Stacks everything vertically */
     .about-content-wrapper {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: flex-start;
         gap: 25px;
 
@@ -652,12 +557,7 @@
         font-size: 7rem;
     }
 
-    .sitting-cat {
-        width: 70px;
-        bottom: 6px;
-        left: 10px;
-    }
-
+  
     .sidebar-btn {
         font-size: 0.7rem;
         letter-spacing: 1px;
@@ -1092,5 +992,3 @@
         gap: 8px;
     }
 }
-
-

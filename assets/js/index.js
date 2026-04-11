@@ -110,25 +110,6 @@ menuToggle.addEventListener('click', () => {
     }
 });
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navList.classList.remove('active');
-    });
-});
-
-new Typed(".typing", {
-    strings: [
-        "modern websites",
-        "full-stack applications",
-        "responsive designs",
-        "UI/UX designs",
-    ],
-    typeSpeed: 60,
-    backSpeed: 40,
-    backDelay: 1500,
-    loop: true,
-    showCursor: false // <--- ADD THIS LINE TO REMOVE THE WHITE LINE
-});
 
 
 

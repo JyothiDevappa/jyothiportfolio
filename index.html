@@ -31,19 +31,39 @@
 
 <body>
 
-    <div id="preloader">
-        <div class="loader-content">
-            <div class="tea-icon">☕</div>
-            <div class="loading-text">
-                <span class="glitch-title">WELCOME TO J'S PORTFOLIO</span>
+  <div id="preloader">
+    <div class="background-noise"></div>
+    <div class="loader-content">
+        <div class="universe-core">
+            <div class="ring outer"></div>
+            <div class="ring middle"></div>
+            <div class="ring inner"></div>
+            <div class="core-dot"></div>
+        </div>
+
+        <div class="loading-text">
+            <h1 class="scan-title" data-text="INITIALIZING_COSMOS_PROTOCOL">LOADING JD'S PORTFOLIO</h1>
+            
+            <div class="data-grid">
+                <span class="coord-x">LAT: 40.7128</span>
+                <span class="coord-y">LONG: 74.0060</span>
+            </div>
+
+            <div class="status-bar-container">
+                <div class="terminal-bracket">[</div>
                 <div class="status-bar">
                     <div class="progress-fill"></div>
                 </div>
-                <p class="loader-sub">Compiling tea.exe... <span id="load-percent">0%</span></p>
+                <div class="terminal-bracket">]</div>
             </div>
+            
+            <p class="loader-sub">
+                <span class="blink">●</span> SYNCHING_NEURAL_NET... 
+                <span id="load-percent">0%</span>
+            </p>
         </div>
     </div>
-
+</div>
 
 
     <!-- NAVBAR (FULLY SEPARATED) -->
@@ -140,7 +160,6 @@
             </div>
 
             <div class="logo-morph">
-                <span class="logo-initials">JD</span>
                 <h1 class="full-name">
                     <span class="first-name">JYOTHI</span>
                     <span class="last-name">DEVAPPA</span>
@@ -170,17 +189,19 @@
 
 
 
-        
- <div class="hero-socials cluster-design">
-    <div class="scout-track">
-        <div class="scout-bar"></div>
-        <div class="social-group">
-            <a href="https://github.com/jyothidevappa" target="_blank" class="social-item" data-label="SRC">GITHUB</a>
-            <a href="https://linkedin.com/in/jyothidevappa/" target="_blank" class="social-item" data-label="NET">LINKEDIN</a>
-            <a href="mailto:jyothi@example.com" class="social-item" data-label="MSG">MAIL_ME</a>
+
+        <div class="hero-socials cluster-design">
+            <div class="scout-track">
+                <div class="scout-bar"></div>
+                <div class="social-group">
+                    <a href="https://github.com/jyothidevappa" target="_blank" class="social-item"
+                        data-label="SRC">GITHUB</a>
+                    <a href="https://linkedin.com/in/jyothidevappa/" target="_blank" class="social-item"
+                        data-label="NET">LINKEDIN</a>
+                    <a href="mailto:jyothi@example.com" class="social-item" data-label="MSG">MAIL_ME</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 
 
@@ -274,7 +295,7 @@
             <div class="status-card" onclick="event.stopPropagation()">
                 <button class="close-btn" onclick="hideAboutCard()">×</button>
                 <div class="card-content">
-                    <h2 class="card-title">CURRENT_STATUS</h2>
+                    <h2 class="card-title">ABOUT_ME</h2>
 
 
                     <p class="card-description">
@@ -287,15 +308,14 @@
                         Bangalore.<br><br>
 
                         Internship at <span class="highlight">Wegeni Consultancy</span> as an Integrated Intern:
-                        <br>• Handling Front-End & Back-End Development
-                        <br>• Working with <span class="highlight">PHP Laravel</span>
-                        <br>• Doing UI customization
-                        <br>• Managing end-to-end website changes
+
                     </p>
 
-                    <p class="card-footer">"Learning by doing, improving every day 🚀"</p>
+                    <p class="card-footer">"Learning by doing, improving every day"</p>
 
                 </div>
+
+
             </div>
         </div>
 
@@ -342,16 +362,31 @@
                             <div class="intern-content">
                                 <span id="close-intern" class="close-btn">&times;</span>
                                 <h2>Internship Experience</h2>
+
+
                                 <p>
-                                    I worked as an intern across multiple projects where I handled real-time
-                                    development tasks, content updates, UI improvements, and feature implementation.
-                                    I gained hands-on experience in front-end development, debugging, deployment,
-                                    and working with live production environments.
+                                    I worked as an intern across multiple projects handling real-time development,
+                                    UI improvements, and feature implementation. I gained hands-on experience in
+                                    <span class="highlight">Full-stack development</span>, debugging, and managing
+                                    live production environments.
                                 </p>
+
                                 <p>
-                                    This experience helped me understand teamwork, deadlines, and how real
-                                    industry workflows operate.
+                                    <b>Development:</b> <span class="highlight">PHP Laravel</span> & Front-end logic<br>
+                                    <b>Management:</b> <span class="highlight">CMS Customization</span> & Data
+                                    uploads<br>
+                                    <b>Design:</b> <span class="highlight">UI Tweaks</span> & Layout improvements<br>
+                                    <b>Operations:</b> <span class="highlight">End-to-end</span> site changes
                                 </p>
+
+                                <p>
+                                    This experience helped me understand how <span class="highlight">real industry
+                                        workflows</span>
+                                    operate while managing strict deadlines and team collaboration.
+                                </p>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -399,117 +434,11 @@
 
 
 
-    <section class="portfolio-page-wrapper">
-
-        <div class="heading-area">
-            <h1>LATEST PROJECTS</h1>
-            <p class="heading-description">
-                A curated collection of web experiences showcasing modern design,
-                clean development practices, and immersive digital storytelling.
-                Each project reflects a unique concept crafted with precision and
-                attention to detail.
-            </p>
-        </div>
-
-        <div class="main-layout">
-            <div class="project-title-outside">J SCENTIQUE</div>
-            <div class="content-row">
-                <div class="brand-vertical">j scentique</div>
 
 
-                <div class="video-box">
-                    <video muted loop>
-                        <source src="assets/videos/perfume-vid.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-overlay">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                </div>
-                <div class="side-content">
-                    <p class="description-box">
-                        ITS A PREMIUM PERFUME WEBSITE. A MODERN, ELEGANT EXPERIENCE FOR FRAGRANCE ENTHUSIASTS.
-                    </p>
-                    <div class="links-group">
-                        <a href="#" class="link-item">
-                            <span>live</span>
-                            <i class="fa-solid fa-link"></i>
-                        </a>
-                        <a href="#" class="link-item">
-                            <span>code</span>
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-line"></div>
-        </div>
 
-        <div class="main-layout">
-            <div class="project-title-outside" style="text-align:right; margin-left:0; margin-right:55px;">
-                STORY OF HER DAYS
-            </div>
-            <div class="content-row" style="flex-direction:row-reverse;">
-                <div class="brand-vertical">the story of her days</div>
-                <div class="video-box">
-                    <video muted loop>
-                        <source src="videos/perfume-vid.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-overlay">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                </div>
-                <div class="side-content" style="margin-left:0; margin-right:-40px;">
-                    <p class="description-box">
-                        A VISUAL STORY WEBSITE CAPTURING DAILY MOMENTS, MEMORIES AND EMOTIONS THROUGH BEAUTIFUL DESIGN.
-                    </p>
-                    <div class="links-group" style="align-items:flex-end; margin-left:0; margin-right:100px;">
-                        <a href="#" class="link-item">
-                            <span>live</span>
-                            <i class="fa-solid fa-link"></i>
-                        </a>
-                        <a href="#" class="link-item">
-                            <span>code</span>
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-line" style="margin-left:auto; margin-right:0;"></div>
-        </div>
 
-        <div class="main-layout">
-            <div class="project-title-outside">JUICE SHOP</div>
-            <div class="content-row">
-                <div class="brand-vertical">juice shop</div>
-                <div class="video-box">
-                    <video muted loop>
-                        <source src="videos/perfume-vid.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-overlay">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                </div>
-                <div class="side-content">
-                    <p class="description-box">
-                        A FRESH AND MODERN JUICE SHOP WEBSITE DESIGNED TO SHOWCASE HEALTHY DRINKS WITH A CLEAN AND
-                        VIBRANT USER EXPERIENCE.
-                    </p>
-                    <div class="links-group">
-                        <a href="#" class="link-item">
-                            <span>live</span>
-                            <i class="fa-solid fa-link"></i>
-                        </a>
-                        <a href="#" class="link-item">
-                            <span>code</span>
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-line"></div>
-        </div>
 
-    </section>
 
 
     <div class="scroll-widget">
@@ -526,46 +455,18 @@
     <div class="cursor-follower"></div>
 
 
-    <!-- hero section typing js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="assets/js/index.js"></script>
+
 
 
     <script>
-        const words = ["UX/UI DESIGNS", "MODERN WEBSITES", "FULL-STACK APPS"];
-        let i = 0;
-        let j = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const target = document.getElementById("typewriter");
-            if (!target) return;
-
-            let currentWord = words[i];
-
-            if (isDeleting) {
-                target.textContent = currentWord.substring(0, j - 1);
-                j--;
-            } else {
-                target.textContent = currentWord.substring(0, j + 1);
-                j++;
-            }
-
-            if (!isDeleting && j === currentWord.length) {
-                isDeleting = true;
-                setTimeout(typeEffect, 2000); // Hold the word for 2 seconds
-            } else if (isDeleting && j === 0) {
-                isDeleting = false;
-                i = (i + 1) % words.length;
-                setTimeout(typeEffect, 500);
-            } else {
-                setTimeout(typeEffect, isDeleting ? 60 : 120);
-            }
-        }
-
-        // Initialize after page load
-        window.onload = typeEffect;
     </script>
+
+    <!-- hero section typing js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/js/navbar.js"></script>
+
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/typing.js"></script>
 </body>
 
 </html>

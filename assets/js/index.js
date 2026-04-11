@@ -1,85 +1,34 @@
-// prelode
 
 window.addEventListener('load', () => {
-    const progress = document.querySelector('.progress-fill');
-    const percent = document.getElementById('load-percent');
-    const loader = document.getElementById('preloader');
+    let progress = 0;
+    const fill = document.querySelector('.progress-fill');
+    const text = document.getElementById('load-percent');
     
-    let width = 0;
-    
-    // FAST LOADING LOGIC
-    let loadingInterval = setInterval(() => {
-        if (width >= 100) {
-            clearInterval(loadingInterval);
-            
-            // Minimal pause at 100% for a snappy feel
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 600); // Quick fade out
-            }, 200);
+    const updateLoader = () => {
+        // Simulation of "staggered" data packets
+        let increment = Math.random() > 0.8 ? 12 : 2; 
+        progress += increment;
+
+        if (progress > 100) progress = 100;
+        
+        fill.style.width = progress + '%';
+        text.innerText = progress + '%';
+
+        if (progress < 100) {
+            setTimeout(updateLoader, Math.random() * 200);
         } else {
-            // Increased increments (4% to 9% per tick) for a faster crawl
-            let increment = Math.floor(Math.random() * 6) + 4; 
-            width += increment;
-            
-            if (width > 100) width = 100;
-            
-            progress.style.width = width + '%';
-            percent.innerText = width + '%';
+            // Exit sequence
+            setTimeout(() => {
+                document.getElementById('preloader').style.transform = 'translateY(-100%)';
+                document.getElementById('preloader').style.transition = 'transform 0.8s cubic-bezier(0.87, 0, 0.13, 1)';
+            }, 600);
         }
-    }, 80); // Ticks every 80ms (2x faster than your 160ms version)
+    };
+
+    updateLoader();
 });
 
 
-
-
-// Handles mobile menu toggle (open/close) and auto-close on link click
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector('#mobile-menu');
-    const navLinks = document.querySelector('#nav-list');
-
-    menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('is-active');
-        navLinks.classList.toggle('is-active');
-    });
-
-    document.querySelectorAll('.main-menu-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('is-active');
-            navLinks.classList.remove('is-active');
-        });
-    });
-});
-
-
-// Creates a random letter animation effect (odometer style) for the hero name
-
-
-const nameElement = document.querySelector(".hero_name");
-const targetValue = nameElement.dataset.value;
-const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-function runOdometer() {
-    let iteration = 0;
-    clearInterval(nameElement.timer);
-
-    nameElement.timer = setInterval(() => {
-        nameElement.innerText = targetValue.split("")
-            .map((letter, index) => {
-                if (index < iteration) return targetValue[index];
-                return chars[Math.floor(Math.random() * chars.length)];
-            })
-            .join("");
-
-        if (iteration >= targetValue.length) clearInterval(nameElement.timer);
-        iteration += 1 / 3;
-    }, 50);
-}
-
-window.onload = runOdometer;
-nameElement.onmouseenter = runOdometer;
 
 
 // Smooth scrolls down one screen height when scroll widget is clicked
@@ -227,3 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === overlay) closeHandler();
     });
 });
+
+
+
+
+
+

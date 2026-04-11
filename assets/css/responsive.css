@@ -1,4 +1,51 @@
 
+/* Mobile Optimization */
+@media (max-width: 480px) {
+    .universe-core {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .scan-title {
+        font-size: 0.8rem;
+        letter-spacing: 2px; /* Prevent text clipping on narrow screens */
+        text-align: center;
+    }
+
+    .status-bar {
+        width: 180px; /* Shorter bar for small screens */
+        height: 8px;
+    }
+
+    .terminal-bracket {
+        font-size: 1.2rem;
+    }
+
+    .data-grid {
+        font-size: 0.5rem;
+        padding: 0 10px;
+    }
+
+    .loader-sub {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
+
+/* Extra small devices / Foldables */
+@media (max-width: 320px) {
+    .status-bar {
+        width: 140px;
+    }
+    
+    .scan-title {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+}
+
+
 /* ================= 1. DESKTOP NAV (Only shows above 769px) ================= */
 @media screen and (min-width: 769px) {
 
@@ -591,91 +638,6 @@
 
 
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 1200px) {
-    .portfolio-page-wrapper .video-box {
-        width: 850px;
-        height: 480px;
-    }
-
-    .portfolio-page-wrapper .project-title-outside {
-        width: 850px;
-    }
-}
-
-@media (max-width: 768px) {
-    .portfolio-page-wrapper .heading-area h1 {
-        font-size: 1.6rem;
-    }
-
-    .portfolio-page-wrapper .main-layout {
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-
-    .portfolio-page-wrapper .project-title-outside {
-        width: 100% !important;
-        margin: 0 0 10px 0 !important;
-        text-align: left !important;
-        font-size: 1rem;
-    }
-
-    .portfolio-page-wrapper .content-row {
-        flex-direction: column !important;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    .portfolio-page-wrapper .brand-vertical {
-        display: none;
-    }
-
-    .portfolio-page-wrapper .video-box {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-    }
-
-    .portfolio-page-wrapper .side-content {
-        width: 100%;
-        margin: 20px 0 0 0 !important;
-        height: auto;
-    }
-
-    .portfolio-page-wrapper .description-box {
-        margin-top: 0;
-        padding: 20px;
-        font-size: 0.85rem;
-    }
-
-    .portfolio-page-wrapper .links-group {
-        margin: 20px 0 0 0 !important;
-        flex-direction: row;
-        align-items: center !important;
-        gap: 30px;
-    }
-
-    .portfolio-page-wrapper .bottom-line {
-        width: 100%;
-        margin: 30px 0 0 0 !important;
-    }
-
-
-
-}
-
-@media (max-width: 480px) {
-    .portfolio-page-wrapper .heading-description {
-        max-width: 350px;
-        margin: 25px auto 0;
-        text-align: justify;
-        text-align-last: center;
-    }
-}
-
-
-
 
 /* Enable cursor on mobile but make it small */
 @media (max-width: 768px) {
@@ -964,31 +926,3 @@
 
 
 
-
-
-@media (max-width: 1024px) {
-    .portfolio-page-wrapper .brand-vertical {
-        display: none;
-    }
-}
-
-
-
-
-@media (max-width: 1024px) {
-    .portfolio-page-wrapper .links-group {
-        flex-direction: row;
-        /* Stack side-by-side on mobile */
-        justify-content: center;
-        margin-left: 0;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .portfolio-page-wrapper .link-item {
-        flex-direction: column;
-        /* Icon on top, text on bottom */
-        font-size: 0.7rem;
-        gap: 8px;
-    }
-}

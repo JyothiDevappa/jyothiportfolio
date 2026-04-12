@@ -80,6 +80,7 @@
     justify-content: space-between;
     opacity: 0.6;
     margin-bottom: 5px;
+    color: whitesmoke;
 }
 
 /* The Bracketed Status Bar */
@@ -112,6 +113,10 @@
 
 .blink {
     animation: blink 0.8s step-end infinite;
+}
+
+.loader-sub{
+    color: var(--space-blue);
 }
 
 @keyframes blink { 50% { opacity: 0; } }
